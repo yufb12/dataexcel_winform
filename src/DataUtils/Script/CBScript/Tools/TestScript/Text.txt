@@ -1,0 +1,28 @@
+﻿//定义ID
+SetID("C1","INDEX")
+SetID("C2","LEVEL")
+SetID("C3","TempI")
+SetID("C4","PRICE")
+SetID("C5","AVG")
+SetCell(Cell("B9"),"价格")
+//设置循环
+SetID("INDEX",10)
+//设置标签
+LABEL INDEXAUTOADD
+//IF判断
+IF CELL("INDEX")>30
+	GOTO END
+ELSE CELL("INDEX")>20
+	SetCell(Cell("B"+Cell("INDEX")),Random(30,100))
+    SetID("INDEX",Cell("INDEX")+1)
+	GOTO INDEXAUTOADD
+ELSE CELL("INDEX")>=10
+	SetCell(Cell("B"+Cell("INDEX")),Random(100,200))
+    SetID("INDEX",Cell("INDEX")+1)
+	GOTO INDEXAUTOADD
+ENDIF
+SetCell(Cell("TOTAL"),SUM("B10:B30"))
+SetCell(Cell("AVG"),SUM("B10:B30")/COUNT("B10:B30"))
+
+LABEL END
+RETURN Cell("TOTAL")

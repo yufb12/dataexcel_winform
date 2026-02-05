@@ -1,0 +1,12 @@
+﻿SELECT
+    [DISTINCT | DISTINCTROW(a.col_name,b.col_name) ] 
+    select_expr [, select_expr] 
+    [FROM table as A
+     {LEFT|INNER} JOIN table as B on a.col_name=b.col_name] and b.maxrownum
+    [WHERE where_condition]
+    [GROUP BY {col_name} 
+    [HAVING where_condition]
+    [ORDER BY {col_name}
+      [ASC | DESC]]
+    [LIMIT {row_count | position OFFSET row_count}] 
+ 

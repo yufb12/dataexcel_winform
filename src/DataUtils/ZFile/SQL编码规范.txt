@@ -1,0 +1,122 @@
+﻿ 
+
+
+1 判断数据库是否存在
+if exists (select * from sys.databases where name = '数据库名') 
+drop database [数据库名]
+
+2 判断表是否存在
+if exists (select * from sysobjects where id = object_id(N'[表名]') and OBJECTPROPERTY(id, N'IsUserTable') = 1) 
+begin
+	--drop table [表名] 严禁drop表,之后再创建新表
+end
+
+
+2.1 判断表是否存在
+if not exists (select * from sysobjects where id = object_id(N'[表名称]') and OBJECTPROPERTY(id, N'IsUserTable') = 1) 
+begin
+	CREATE TABLE [dbo].[表名称]
+end
+
+2.2判断表是否存在，存在就重命名表
+if not exists (select * from sysobjects where id = object_id(N'[表名称]') and OBJECTPROPERTY(id, N'IsUserTable') = 1) 
+begin
+	EXEC sp_rename 'Sales.表名称', '新表名称';
+end
+
+3 判断存储过程是否存在
+if exists (select * from sysobjects where id = object_id(N'[存储过程名]') and OBJECTPROPERTY(id, N'IsProcedure') = 1) 
+drop procedure [存储过程名]
+
+
+4 判断临时表是否存在
+if object_id('tempdb..#临时表名') is not null 
+drop table #临时表名
+
+5 判断视图是否存在
+
+--判断是否存在'MyView52'这个试图
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.VIEWS WHERE TABLE_NAME = N'MyView52')
+PRINT '存在'
+else
+PRINT '不存在'
+6 判断函数是否存在 
+-- 判断要创建的函数名是否存在 
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[函数名]') and xtype in (N'FN', N'IF', N'TF')) 
+drop function [dbo].[函数名]
+
+7 获取用户创建的对象信息
+
+SELECT [name],[id],crdate FROM sysobjects where xtype='U'
+
+
+/* 
+xtype 的表示参数类型，通常包括如下这些 
+C = CHECK 约束 
+D = 默认值或 DEFAULT 约束 
+F = FOREIGN KEY 约束 
+L = 日志 
+FN = 标量函数 
+IF = 内嵌表函数 
+P = 存储过程 
+PK = PRIMARY KEY 约束（类型是 K） 
+RF = 复制筛选存储过程 
+S = 系统表 
+TF = 表函数 
+TR = 触发器 
+U = 用户表 
+UQ = UNIQUE 约束（类型是 K） 
+V = 视图 
+X = 扩展存储过程 
+*/
+
+8 判断列是否存在
+if exists(select * from syscolumns where id=object_id('表名') and name='列名') 
+begin
+	alter table 表名 drop column 列名
+end
+
+8.1判断列是否存在，存在就修改
+if exists(select * from syscolumns where id=object_id('表名') and name='列名') 
+begin
+	EXEC sp_rename '表名.列名', '新列名', 'COLUMN'
+end
+
+9 判断列是否自增列
+if columnproperty(object_id('table'),'col','IsIdentity')=1 
+print '自增列' 
+else 
+print '不是自增列'
+
+SELECT * FROM sys.columns WHERE object_id=OBJECT_ID('表名') AND is_identity=1
+
+10 判断表中是否存在索引
+
+
+if exists(select * from sysindexes where id=object_id('表名') and name='索引名') 
+print '存在' 
+else 
+print '不存在'
+
+11 查看数据库中对象
+
+SELECT * FROM sys.sysobjects WHERE name='对象名' SELECT * FROM sys.sysobjects WHERE name='对象名'
+
+12 不存在列的时候增加列
+if not exists(select * from syscolumns where id=object_id('表名') and name='列名') 
+begin
+	alter table dbo.表名 add 列名 varchar(100)
+end
+
+13 判断数据存不存在，不存在就插入新数
+if not exists(select * from dbo.表名 where 主键='AAAAAAAAAA')
+begin 
+
+end
+
+	if not exists(select top 1 * from [dbo].[模块] where [模块编码]='01200088')
+	begin
+		INSERT [模块] ([模块编码],[模块名称],[上级编码],[上级名称],[级别],[窗体名称],[动态库名],[禁用],[备注],[对话框模式],[排序]) 
+		VALUES ( '01200088','合同(协议)签订审批单网上申报审批','0120',
+		'合同管理',2,'Feng.WinUI.HeTong.frm合同签订审批单网上申报审批','MKWinUI.v1.1.dll',0,'',0,9)
+	end

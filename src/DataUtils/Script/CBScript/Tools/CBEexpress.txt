@@ -1,0 +1,66 @@
+﻿exp			: logical_or_exp
+			; 
+logical_or_exp		: logical_and_exp
+			| logical_or_exp '||' logical_and_exp
+			;
+logical_and_exp		: inclusive_or_exp
+			| logical_and_exp '&&' inclusive_or_exp
+			;
+inclusive_or_exp	: exclusive_or_exp
+			| inclusive_or_exp '|' exclusive_or_exp
+			;
+exclusive_or_exp	: and_exp
+			| exclusive_or_exp '^' and_exp
+			;
+and_exp			: equality_exp
+			| and_exp '&' equality_exp
+			;
+equality_exp		: relational_exp
+			| equality_exp '==' relational_exp
+			| equality_exp '!=' relational_exp
+			;
+relational_exp		: shift_expression
+			| relational_exp '<' shift_expression
+			| relational_exp '>' shift_expression
+			| relational_exp '<=' shift_expression
+			| relational_exp '>=' shift_expression
+			;
+shift_expression	: additive_exp
+			| shift_expression '<<' additive_exp
+			| shift_expression '>>' additive_exp
+			;
+additive_exp		: mult_exp
+			| additive_exp '+' mult_exp
+			| additive_exp '-' mult_exp
+			;
+mult_exp		: unary_exp
+			| mult_exp '*' unary_exp
+			| mult_exp '/' unary_exp
+			| mult_exp '%' unary_exp
+			;
+unary_exp		: postfix_exp
+			| '++' postfix_exp
+			| '--' postfix_exp
+			| '-' postfix_exp 
+			| '~' postfix_exp 
+			| '!' postfix_exp  
+			; 
+postfix_exp		: primary_exp  
+			| ID '(' argument_exp_list ')'
+			| ID '('			')' 
+			; 
+primary_exp		: 
+			| const 
+			| '(' expression ')'
+			;
+argument_exp_list	: range_exp
+			| assignment_exp
+			| argument_exp_list ',' assignment_exp
+			;
+range_exp	: '[' assignment_exp ':' assignment_exp ']' 
+			;
+const			: NUMBER_CONST
+			| STRING_CONST  
+			| NULL
+			| KEY
+			; 

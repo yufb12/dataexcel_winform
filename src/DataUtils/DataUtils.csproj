@@ -1,0 +1,1464 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AA6199FC-1673-4759-A38B-79E3A7E141A6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Feng.Utils</RootNamespace>
+    <AssemblyName>DataUtils.v2.1</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>PublickKey.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\DataExcelSetup\2025\DS_共享服务器\DS\V2025092914\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;UDP</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Optimize>false</Optimize>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;UDP</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Images\Click.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App\FileInfo.cs" />
+    <EmbeddedResource Include="Forms\Dialogs\ContinueDialog.resx">
+      <DependentUpon>ContinueDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\InputFileDialog.resx">
+      <DependentUpon>InputFileDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Forms\frmNotification.resx">
+      <DependentUpon>frmNotification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Forms\WaitingTimeDialog.resx">
+      <DependentUpon>WaitingTimeDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Forms\ToolTip.resx">
+      <DependentUpon>ToolTip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Popup\DatePopupForm.resx">
+      <DependentUpon>DatePopupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Popup\DateTimeForm.resx">
+      <DependentUpon>DateTimeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Images\VectorControl.bmp" />
+    <None Include="PublickKey.snk" />
+    <None Include="Resources\FT_16.png" />
+    <None Include="Resources\FE_16.png" />
+    <None Include="Resources\image16_gem_options2.png" />
+    <None Include="Resources\Designer.png" />
+    <None Include="Resources\celleditdropdown.png" />
+    <None Include="Resources\CheckStateNo.png" />
+    <None Include="Resources\CheckStateYes.png" />
+    <None Include="Resources\FP16.png" />
+    <None Include="Resources\FP32.png" />
+    <None Include="Resources\FT.png" />
+    <None Include="Resources\FF_16.png" />
+    <None Include="Resources\FT2_16.png" />
+    <None Include="Resources\pause16.png" />
+    <None Include="Resources\play16.png" />
+    <Content Include="Forms\Forms\icon\Notification_close.png" />
+    <Content Include="Forms\Forms\icon\Notification_error.png" />
+    <Content Include="Forms\Forms\icon\Notification_info.png" />
+    <Content Include="Forms\Forms\icon\Notification_success.png" />
+    <Content Include="Forms\Forms\icon\Notification_warn.png" />
+    <None Include="Resources\notification_copy.png" />
+    <Content Include="Script\DNF\cbnf.txt" />
+    <Content Include="Script\DNF\cbnf2.txt" />
+    <Content Include="Script\DNF\FunctonDnf.txt" />
+    <Content Include="Script\CBEexpress\Test\Version.txt" />
+    <Content Include="Script\SQL\DNF\cbnf23.txt" />
+    <Content Include="Script\SQL\DNF\cbnf22.txt" />
+    <Content Include="Script\SQL\DNF\cbnf21.txt" />
+    <Content Include="Script\DNF\zcbnf21.txt" />
+    <Content Include="ZFile\VersionHistory.txt" />
+    <Compile Include="App\SmallVersion.cs" />
+    <Compile Include="App\MacAddressHelper.cs" />
+    <Compile Include="Attribute\Attribute.cs" />
+    <Compile Include="Collections\ModelPool.cs" />
+    <Compile Include="Collections\HashtableEx.cs" />
+    <Compile Include="Collections\Model\HashtableEx.cs" />
+    <Compile Include="Collections\ObjectCollection.cs" />
+    <Compile Include="Collections\QueueList.cs" />
+    <Compile Include="Collections\DictionaryEx.cs" />
+    <Compile Include="Collections\ListEx.cs" />
+    <Compile Include="Collections\StackList.cs" />
+    <Compile Include="Collections\SelectItemCollection.cs" />
+    <Compile Include="Command\CommandStackt.cs" />
+    <Compile Include="Command\FunctionHelper.cs" />
+    <Compile Include="Command\CommandLine.cs" />
+    <Compile Include="Forms\Base\CopyRight.cs" />
+    <Compile Include="Forms\Base\EnterAccount.cs" />
+    <Compile Include="Forms\Base\LockVersion.cs" />
+    <Compile Include="Forms\Base\EditVersion.cs" />
+    <Compile Include="Forms\Controls\ListView\ListViewItemComparer.cs" />
+    <Compile Include="Forms\Controls\ListView\ListViewMulSelectTools.cs" />
+    <Compile Include="Forms\Dialogs\ContinueDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\ContinueDialog.Designer.cs">
+      <DependentUpon>ContinueDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dialogs\InputFileDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\InputFileDialog.Designer.cs">
+      <DependentUpon>InputFileDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Forms\frmNotification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Forms\frmNotification.designer.cs">
+      <DependentUpon>frmNotification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Forms\WaitingTimeDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Forms\WaitingTimeDialog.Designer.cs">
+      <DependentUpon>WaitingTimeDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Image\Margins.cs" />
+    <Compile Include="Forms\ClipboardHelper.cs" />
+    <Compile Include="Forms\Popup\DatePopupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\View\BaseView\DivSizeWidthMode.cs" />
+    <Compile Include="Forms\View\BaseView\EventViewArgs.cs" />
+    <Compile Include="Forms\View\BaseView\ImageTextView.cs" />
+    <Compile Include="Forms\View\BaseView\DebugView.cs" />
+    <Compile Include="Forms\View\BaseView\ScrollView.cs" />
+    <Compile Include="Forms\View\BaseView\TimeView2.cs" />
+    <Compile Include="Graphics\ImageProcess.cs" />
+    <Compile Include="IO\RSAHelper_JAVA.cs" />
+    <Compile Include="IO\ZipTools.cs" />
+    <Compile Include="IO\ServerFile.cs" />
+    <Compile Include="IO\MD5Util.cs" />
+    <Compile Include="IO\ScriptFileInfo.cs" />
+    <Compile Include="IO\RSAEncrypt.cs" />
+    <Compile Include="IO\JsonSetting.cs" />
+    <Compile Include="Net\DTP\DtpDns.cs" />
+    <Compile Include="Net\DTP\DtpProtocol.cs" />
+    <Compile Include="Net\DTP\ExtendLockInfo.cs" />
+    <Compile Include="Net\Extensions\UserVar.cs" />
+    <Compile Include="Net\Http\Core\HttpHeader_Type.cs" />
+    <Compile Include="Net\Http\Core\HttpResponse.cs" />
+    <Compile Include="Net\Http\Core\HttpServerExtend.cs" />
+    <Compile Include="Net\Http\Core\SimpleHttpServer.cs" />
+    <Compile Include="Net\Http\Core\HttpTcpClientTest.cs" />
+    <Compile Include="Net\Http\Core\HttpTcpClient.cs" />
+    <Compile Include="Net\Http\Core\HttpRequest.cs" />
+    <Compile Include="Net\Http\Core\HttpTcpServeTest.cs" />
+    <Compile Include="Net\Http\HttpTools\HttpDownLoad.cs" />
+    <Compile Include="Net\Http\HttpTools\HttpServer2.cs" />
+    <Compile Include="Net\Http\Core\HttpTcpServer.cs" />
+    <Compile Include="Net\Http\Core\HttpTcpServerProxy.cs" />
+    <Compile Include="Net\Http\Core\HttpTcpServerEvent.cs" />
+    <Compile Include="Net\Mapping\TcpMapping.cs" />
+    <Compile Include="Net\Protocol\FileTools.cs" />
+    <Compile Include="Net\Protocol\NetResult.cs" />
+    <Compile Include="Net\Protocol\SuccessNetResult.cs" />
+    <Compile Include="Net\Protocol\ResultString.cs" />
+    <Compile Include="Script\Function\BaseMethodContainer.cs" />
+    <Compile Include="Script\Function\BaseMethodInfo.cs" />
+    <Compile Include="Script\Function\CBMethod.cs" />
+    <Compile Include="Script\Function\CBMethodContainer.cs" />
+    <Compile Include="Script\Function\FunctionExtion\ArraruFunctionContainer.cs" />
+    <Compile Include="Script\Function\FunctionExtion\DebugMethodContainer.cs" />
+    <Compile Include="Script\Function\FunctionExtion\NotificationMethodContainer.cs" />
+    <Compile Include="Script\Function\FunctionExtion\ConsoleFunctionContainer.cs" />
+    <Compile Include="Script\Function\FunctionExtion\ConvertFunctionContainer.cs" />
+    <Compile Include="Script\Function\FunctionExtion\DataTableFunctionContainer.cs" />
+    <Compile Include="Script\Function\FunctionExtion\DateTimeFunctionContainer.cs" />
+    <Compile Include="Script\Function\FunctionExtion\DebugFunctionContainer.cs" />
+    <Compile Include="Script\Function\FunctionExtion\FileFunctionContainer.cs" />
+    <Compile Include="Script\Function\FunctionExtion\CFusionMethodContainer.cs" />
+    <Compile Include="Script\Function\FunctionExtion\FormFunctionContainer.cs" />
+    <Compile Include="Script\Function\FunctionExtion\Form\FrmTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Script\Function\FunctionExtion\Form\FrmTable.Designer.cs">
+      <DependentUpon>FrmTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Script\Function\FunctionExtion\JsonFunctionContainer.cs" />
+    <Compile Include="Script\Function\FunctionExtion\ListFunctionContainer.cs" />
+    <Compile Include="Script\Function\FunctionExtion\LogicalFunctionContainer.cs" />
+    <Compile Include="Script\Function\FunctionExtion\MathematicsFunctionContainer.cs" />
+    <Compile Include="Script\Function\FunctionExtion\ReflectionContainer.cs" />
+    <Compile Include="Script\Function\FunctionExtion\SqlServerFunctionContainer.cs" />
+    <Compile Include="Script\Function\FunctionExtion\StringFunctionContainer.cs" />
+    <Compile Include="Script\Function\FunctionExtion\StyleFunctionContainer.cs" />
+    <Compile Include="Script\Function\FunctionExtion\SystemFunctionContainer.cs" />
+    <Compile Include="Script\Function\FunctionExtion\TrigonometricFunctionContainer.cs" />
+    <Compile Include="Script\Function\FunctionExtion\WebServiceFunctionContainer.cs" />
+    <Compile Include="Script\Function\FunctionExtion\XMLServiceFunctionContainer.cs" />
+    <Compile Include="Script\Function\ICBEexpress.cs" />
+    <Compile Include="Script\Function\MethodCollection.cs" />
+    <Compile Include="Script\CBEexpress\ExpressPool.cs" />
+    <Compile Include="Script\CBEexpress\Express\ExpressBase.cs" />
+    <Compile Include="Script\CBEexpress\Express\ExpressOperator.cs" />
+    <Compile Include="Script\CBEexpress\Express\RpcHandler.cs" />
+    <Compile Include="Script\CBEexpress\Lexer.cs" />
+    <Compile Include="Script\CBEexpress\NetStatement\NetStatement.cs" />
+    <Compile Include="Script\CBEexpress\Operator\NetExcuteProxy.cs" />
+    <Compile Include="Script\CBEexpress\Operator\NetOperatorBase.cs" />
+    <Compile Include="Script\CBEexpress\Operator\NetOperatorProxyBase.cs" />
+    <Compile Include="Script\CBEexpress\Operator\OperatorAdditive.cs" />
+    <Compile Include="Script\CBEexpress\ScriptFile.cs" />
+    <Compile Include="Script\CBEexpress\NetParser.cs" />
+    <Compile Include="Script\CBEexpress\SyntacticException.cs" />
+    <Compile Include="Script\CBEexpress\Test\frmTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Script\CBEexpress\Test\frmTest.Designer.cs">
+      <DependentUpon>frmTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Script\CBEexpress\Test\ScriptFile.cs" />
+    <Compile Include="Script\CBEexpress\Token.cs" />
+    <Compile Include="Script\CBEexpress\TokenPool.cs" />
+    <Compile Include="Script\CBEexpress\TokenType.cs" />
+    <Compile Include="System\BackWorker.cs" />
+    <Compile Include="Collections\CacheTime.cs" />
+    <Compile Include="Forms\View\BaseView\HSLColorView.cs" />
+    <Compile Include="Forms\View\BaseView\IViewControl.cs" />
+    <Compile Include="Forms\View\BaseView\PositionView.cs" />
+    <Compile Include="Forms\View\BaseView\Animate.cs" />
+    <Compile Include="Forms\View\BaseView\LabelView.cs" />
+    <Compile Include="Forms\View\BaseView\CheckView.cs" />
+    <Compile Include="Forms\View\BaseView\RectangleView.cs" />
+    <Compile Include="Forms\View\BaseView\ImageView.cs" />
+    <Compile Include="Forms\View\BaseView\TimeView.cs" />
+    <Compile Include="Forms\View\BaseView\MoveView.cs" />
+    <Compile Include="Forms\View\Charts\Base\Collection\ChartGridAxisItemCollection.cs" />
+    <Compile Include="Forms\View\Charts\Base\Collection\yAxisCollection.cs" />
+    <Compile Include="Forms\View\Charts\Base\Collection\xAxisCollection.cs" />
+    <Compile Include="Forms\View\Charts\ChartSeries\ChartSeriebar\ChartSeriebar.cs" />
+    <Compile Include="Forms\View\Charts\ChartSeries\ChartSeriebar\ChartSeriebarItem.cs" />
+    <Compile Include="Forms\View\Charts\ChartSeries\ChartSerieLine\ChartSerieLineItem.cs" />
+    <Compile Include="Forms\View\Charts\GridCartesian\ChartViewCartesian.cs" />
+    <Compile Include="Forms\View\Charts\GridCartesian\ChartContents.cs" />
+    <Compile Include="Forms\View\Charts\GridCartesian\ChartGridAxisItem.cs" />
+    <Compile Include="Forms\View\Charts\GridCartesian\xAxisItem.cs" />
+    <Compile Include="Forms\View\Charts\GridCartesian\MoveLineView.cs" />
+    <Compile Include="Forms\View\Charts\GridCartesian\yAxisItem.cs" />
+    <Compile Include="Forms\View\Charts\GridCartesian\yAxisCategory.cs" />
+    <Compile Include="Forms\View\Charts\GridCartesian\yAxisValue.cs" />
+    <Compile Include="Forms\View\Layer\StyleText.cs" />
+    <Compile Include="Forms\View\Layer\StyleFill.cs" />
+    <Compile Include="Forms\View\Layer\StyleLine.cs" />
+    <Compile Include="Forms\View\Layer\StyleColor.cs" />
+    <Compile Include="Forms\View\Charts\Base\ViewLine.cs" />
+    <Compile Include="Forms\View\Charts\Base\ViewStyle.cs" />
+    <Compile Include="Forms\View\Charts\Base\ViewRect.cs" />
+    <Compile Include="Forms\View\Charts\Base\Collection\ChartSerieCollection.cs" />
+    <Compile Include="Forms\View\Charts\Base\Collection\ChartSerieItemCollection.cs" />
+    <Compile Include="Forms\View\Charts\Base\ChartSerieItem.cs" />
+    <Compile Include="Forms\View\Charts\Base\ArraryValue.cs" />
+    <Compile Include="Forms\View\Charts\GridPolar\CharGridPolar.cs" />
+    <Compile Include="Forms\View\Charts\ChartSeries\ChartSerieLine\ChartSerieLine.cs" />
+    <Compile Include="Forms\View\Charts\ChartTitle.cs" />
+    <Compile Include="Forms\View\Charts\GridCartesian\ChartSerie.cs" />
+    <Compile Include="Forms\View\Charts\ChartControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\View\Component\TimerComponent.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\CheckValue.cs" />
+    <Compile Include="Data\SqlServerDbHelper.cs" />
+    <Compile Include="Data\MsDbHelperSQL.cs" />
+    <Compile Include="Data\DbService.cs" />
+    <Compile Include="Data\DataNode.cs" />
+    <Compile Include="Data\SortData.cs" />
+    <Compile Include="Data\Sql\MSSQLTools.cs" />
+    <Compile Include="Data\Sql\DeleteInfo.cs" />
+    <Compile Include="Data\Sql\QeuryInof.cs" />
+    <Compile Include="Data\Sql\QueryMode.cs" />
+    <Compile Include="Data\Sql\QueryArgs.cs" />
+    <Compile Include="Data\TypeEnum.cs" />
+    <Compile Include="Data\DataStruct.cs" />
+    <Compile Include="Data\FileStruct.cs" />
+    <Compile Include="Data\AessemlyStruct.cs" />
+    <Compile Include="Data\DataTableHelper.cs" />
+    <Compile Include="Data\DataTag.cs" />
+    <Compile Include="Data\ColumnInfo.cs" />
+    <Compile Include="Designer\CategorySetting.cs" />
+    <Compile Include="Designer\DataColumnDesigner.cs" />
+    <Compile Include="Designer\GraphicsObject.cs" />
+    <Compile Include="Designer\FileBufferDesigner.cs" />
+    <Compile Include="Designer\FileBrowerDesigner.cs" />
+    <Compile Include="Designer\GraphicsLayer.cs" />
+    <Compile Include="DMS\DMSServer.cs" />
+    <Compile Include="DMS\DMSClient.cs" />
+    <Compile Include="ExampleCode\Collection.cs" />
+    <Compile Include="Forms\ApprovalProcess\LabelColor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\ApprovalProcess\Approval.cs" />
+    <Compile Include="Forms\Base\PropertyAction.cs" />
+    <Compile Include="Forms\Base\YesNoInhert.cs" />
+    <Compile Include="Forms\Base\BaseForm.cs" />
+    <Compile Include="Forms\Command\CompositeKey.cs" />
+    <Compile Include="Forms\Command\CompositeKeyDescription.cs" />
+    <Compile Include="Forms\Compent\Timer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Compent\SortInfo.cs" />
+    <Compile Include="Forms\Compent\FilterInfo.cs" />
+    <Compile Include="Forms\Compent\interface.cs" />
+    <Compile Include="Forms\Compent\ImageTextValue.cs" />
+    <Compile Include="Forms\Controls\Chart\SeriesCollection.cs" />
+    <Compile Include="Forms\Controls\Chart\Series.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\Chart\Pane.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\Chart\PaneCollection.cs" />
+    <Compile Include="Forms\Controls\Chart\Axis.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\Chart\XAxis.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\Chart\YAxis.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\EditBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\EditView\EditControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\EditView\EditView.cs" />
+    <Compile Include="Forms\Controls\GridView\GridView\GridViewDraw.cs" />
+    <Compile Include="Forms\Controls\GridView\GridView\GridViewOverride.cs" />
+    <Compile Include="Forms\Controls\GridView\GridView\GridViewProperty.cs" />
+    <Compile Include="Forms\Controls\TitleControl\TitleImageView.cs" />
+    <Compile Include="Forms\Controls\TitleControl\TitleImageViewItem.cs" />
+    <Compile Include="Forms\Controls\TitleControl\TitleImageViewItemCollection.cs" />
+    <Compile Include="Forms\Controls\ToolBar\ToolBarItemDropDownForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\ToolBar\ToolBarItemDropDownForm.Designer.cs">
+      <DependentUpon>ToolBarItemDropDownForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Controls\ToolBar\ToolBarViewControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\ToolBar\ToolBarViewBrowerControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\TreeView\GridViewColumn.cs" />
+    <Compile Include="Forms\Controls\TreeView\DataTreeRowCollection.cs" />
+    <Compile Include="Forms\Controls\Vector\VectorControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Event\MouseDoubleClick.cs" />
+    <Compile Include="Forms\Event\EventArgs.cs" />
+    <Compile Include="Forms\Controls\GridView\Edit\CellBaseEdit.cs" />
+    <Compile Include="Forms\Controls\GridView\Edit\CellCheckBox.cs" />
+    <Compile Include="Forms\Controls\GridView\Edit\CellImage.cs" />
+    <Compile Include="Forms\Controls\GridView\Edit\CellLabel.cs" />
+    <Compile Include="Forms\Controls\GridView\Edit\CellLinkLabel.cs" />
+    <Compile Include="Forms\Controls\GridView\Edit\CellPasswordBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\GridView\Edit\CellRadioCheckBox.cs" />
+    <Compile Include="Forms\Controls\GridView\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\GridView\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Controls\GridView\GridViewControl\GridViewControlView.cs" />
+    <Compile Include="Forms\Controls\GridView\GridViewControl\ViewHScroll.cs" />
+    <Compile Include="Forms\Controls\GridView\Multipleheader.cs" />
+    <Compile Include="Forms\Controls\GridView\GridView\GridView.cs" />
+    <Compile Include="Forms\Controls\GridView\GridViewColumn.cs" />
+    <Compile Include="Forms\Controls\GridView\GridViewRow.cs" />
+    <Compile Include="Forms\Controls\GridView\GridViewCell.cs" />
+    <Compile Include="Forms\Controls\GridView\ColumnCollection.cs" />
+    <Compile Include="Forms\Controls\GridView\RowCollection.cs" />
+    <Compile Include="Forms\Controls\GridView\CellCollection.cs" />
+    <Compile Include="Forms\Controls\GridView\SelectCellCollection.cs" />
+    <Compile Include="Forms\Controls\GridView\Edit\CellTextBoxEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\GridView\Edit\CellDateTime.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\GridView\Edit\CellNumber.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\GridView\Footer.cs" />
+    <Compile Include="Forms\Controls\GridView\TotalMode.cs" />
+    <Compile Include="Forms\Controls\GridView\MultipleheaderCollection.cs" />
+    <Compile Include="Forms\Controls\GridView\GridView\GridViewPrint.cs" />
+    <Compile Include="Forms\Controls\GridView\GridView\GridViewEvent.cs" />
+    <Compile Include="Forms\Controls\GridView\GridViewControl\GridViewControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\Scroller\HScrollerView.cs" />
+    <Compile Include="Forms\Controls\TextEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\ToolBar\ToolBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\ToolBar\ToolBarItem.cs" />
+    <Compile Include="Forms\Controls\ToolBar\ToolBarItemCollection.cs" />
+    <Compile Include="Forms\Controls\MonthBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\TreeView\DataTreeViewBase.cs" />
+    <Compile Include="Forms\Controls\TreeView\DataTreeRow.cs" />
+    <Compile Include="Forms\Controls\TreeView\ColorValue.cs" />
+    <Compile Include="Forms\Controls\TreeView\DataTreeCell.cs" />
+    <Compile Include="Forms\Controls\TreeView\DataTreeNode.cs" />
+    <Compile Include="Forms\Controls\TreeView\DataTreeViewControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\TreeView\DataTreeView.cs" />
+    <Compile Include="Forms\Controls\TreeView\DataTreeViewEvent.cs" />
+    <Compile Include="Forms\Controls\TreeView\ViewHScroll.cs" />
+    <Compile Include="Forms\Controls\WaintingBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\TimeBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\VScroller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\Chart\Chart.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\ListImageView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\ListImageViewItemCollection.cs" />
+    <Compile Include="Forms\Controls\ListImageViewItem.cs" />
+    <Compile Include="Forms\Controls\BeginAndEndDateTimeBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\Input.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Event\EventHandler.cs" />
+    <Compile Include="Forms\Forms\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Forms\MouseDoubleClick.cs" />
+    <Compile Include="Forms\Forms\ScreenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Forms\ToolTip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Forms\ToolTip.Designer.cs">
+      <DependentUpon>ToolTip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Forms\TreeViewDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Forms\TreeViewDialog.Designer.cs">
+      <DependentUpon>TreeViewDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Forms\SelectInputDateTimeDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Forms\SelectInputDateTimeDialog.Designer.cs">
+      <DependentUpon>SelectInputDateTimeDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Forms\TextDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Forms\TextDialog.Designer.cs">
+      <DependentUpon>TextDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BaseForm.cs" />
+    <Compile Include="Forms\Popup\DropDownBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\NumTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\Scroller\ScrollerView.cs" />
+    <Compile Include="Forms\Controls\TextColorBox.cs" />
+    <Compile Include="Forms\DataProject\FillDataDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DataProject\FillDataDialog.Designer.cs">
+      <DependentUpon>FillDataDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Controls\GridView\GridViewColumnDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\GridView\GridViewColumnDialog.Designer.cs">
+      <DependentUpon>GridViewColumnDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dialogs\frmIPAddressDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\frmIPAddressDialog.Designer.cs">
+      <DependentUpon>frmIPAddressDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Forms\frmButtonTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Forms\frmButtonTest.Designer.cs">
+      <DependentUpon>frmButtonTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Controls\Button.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\InputMonthDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\InputMonthDialog.Designer.cs">
+      <DependentUpon>InputMonthDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Forms\TreeNodeEx.cs" />
+    <Compile Include="Forms\Dialogs\InputYearDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\InputYearDialog.Designer.cs">
+      <DependentUpon>InputYearDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dialogs\InputBetweenMonthDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\InputBetweenMonthDialog.Designer.cs">
+      <DependentUpon>InputBetweenMonthDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Forms\WaitingForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\BugReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\BugReport.Designer.cs">
+      <DependentUpon>BugReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dialogs\RegexDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\RegexDialog.Designer.cs">
+      <DependentUpon>RegexDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Controls\HScroller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Forms\Caret.cs" />
+    <Compile Include="Forms\Forms\TagCollection.cs" />
+    <Compile Include="Forms\Forms\DownLoadWaitingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Forms\DownLoadWaitingForm.designer.cs">
+      <DependentUpon>DownLoadWaitingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Forms\SamllWaitingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Forms\SamllWaitingForm.designer.cs">
+      <DependentUpon>SamllWaitingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dialogs\InputDialogSendkeys.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\InputDialogSendkeys.Designer.cs">
+      <DependentUpon>InputDialogSendkeys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dialogs\InputMultilineDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\InputMultilineDialog.Designer.cs">
+      <DependentUpon>InputMultilineDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dialogs\ErrorDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\ErrorDialog.Designer.cs">
+      <DependentUpon>ErrorDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Forms\ApplicationInfo.cs" />
+    <Compile Include="Forms\Dialogs\InputPasswordDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\InputPasswordDialog.Designer.cs">
+      <DependentUpon>InputPasswordDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dialogs\InputModifyPasswordDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\InputModifyPasswordDialog.Designer.cs">
+      <DependentUpon>InputModifyPasswordDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Forms\WaitingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Forms\WaitingForm.designer.cs">
+      <DependentUpon>WaitingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Popup\DropDownListBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Popup\DropDownListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Popup\DropDownListForm.Designer.cs">
+      <DependentUpon>DropDownListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Popup\DateTimeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Popup\ToolTipForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Popup\PopuplForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Popup\PopupBaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Forms\PrintSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Forms\PrintSetting.Designer.cs">
+      <DependentUpon>PrintSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Margins.cs" />
+    <Compile Include="Forms\Interface\Interfaces.cs" />
+    <Compile Include="Forms\Style\Skin\HScrollerSkin.cs" />
+    <Compile Include="Forms\Style\Skin\VScrollerSkin.cs" />
+    <Compile Include="Forms\Style\Skin\ScrollerSkin.cs" />
+    <Compile Include="Forms\Style\Skin\ToolBarItemSkin.cs" />
+    <Compile Include="Forms\Style\Tools.cs" />
+    <Compile Include="Forms\View\BaseView\TextView.cs" />
+    <Compile Include="Forms\View\BaseView\ControlView.cs" />
+    <Compile Include="Forms\View\BaseView\BaseView.cs" />
+    <Compile Include="Forms\View\Charts\Base\Tooltip.cs" />
+    <Compile Include="Forms\View\Charts\Base\TooltipaxisPointer.cs" />
+    <Compile Include="Forms\View\Charts\ChartView.cs" />
+    <Compile Include="Forms\View\Charts\Base\Extensions\VisualMap.cs" />
+    <Compile Include="Forms\View\Charts\Base\Extensions\DataZoom.cs" />
+    <Compile Include="Forms\View\Charts\Base\TextBase.cs" />
+    <Compile Include="Forms\View\Charts\Base\TextLabel.cs" />
+    <Compile Include="Forms\View\Charts\Base\Base.cs" />
+    <Compile Include="Forms\View\Charts\GridCartesian\CharGridCartesian.cs" />
+    <Compile Include="Forms\View\Charts\ChartLegend.cs" />
+    <Compile Include="Forms\View\Charts\Base\yAxisBase.cs" />
+    <Compile Include="Forms\View\Charts\Base\xAxisBase.cs" />
+    <Compile Include="Forms\View\Charts\GridCartesian\xAxisCategory.cs" />
+    <Compile Include="Forms\View\Charts\Base\ViewItem.cs" />
+    <Compile Include="Forms\View\Charts\Base\Collection\xAxisItemCollection.cs" />
+    <Compile Include="Forms\View\Charts\GridCartesian\xAxisValue.cs" />
+    <Compile Include="Forms\View\Paint\Vector\LayerCollection.cs" />
+    <Compile Include="Forms\View\Paint\Vector\Primitive\PrimitiveClosedCurve.cs" />
+    <Compile Include="Forms\View\Paint\Vector\Primitive\PrimitiveBezier.cs" />
+    <Compile Include="Forms\View\Paint\Vector\Primitive\PrimitiveBase.cs" />
+    <Compile Include="Forms\View\Paint\Vector\Primitive\PrimitiveArc.cs" />
+    <Compile Include="Forms\View\Paint\Vector\Primitive\PrimitiveLine.cs" />
+    <Compile Include="Forms\View\Paint\Vector\PrimitiveLayer.cs" />
+    <Compile Include="Forms\View\Paint\Vector\Canvas.cs" />
+    <Compile Include="Forms\View\Primitive\Circle.cs" />
+    <Compile Include="Forms\View\Primitive\Shape.cs" />
+    <Compile Include="Forms\View\Style\StyleBase.cs" />
+    <Compile Include="Forms\View\ToolBar\ToolBarView.cs" />
+    <Compile Include="Forms\View\BaseView\BaseRectView.cs" />
+    <Compile Include="Forms\KeysTools.cs" />
+    <Compile Include="Forms\View\BaseView\DivView.cs" />
+    <Compile Include="Forms\View\ToolBar\ToolBarItemViewCollection.cs" />
+    <Compile Include="Forms\View\ToolBar\ToolBarItemView.cs" />
+    <Compile Include="Forms\View\BaseView\EditView.cs" />
+    <Compile Include="Forms\View\BaseView\ReSizeView.cs" />
+    <Compile Include="Forms\View\BaseView\ViewCollection.cs" />
+    <Compile Include="Forms\View\Tuples\CheckView.cs" />
+    <Compile Include="Forms\View\ViewControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\View\BaseView\View.cs" />
+    <Compile Include="Graphics\Cache\PenCache.cs" />
+    <Compile Include="Graphics\Cache\SolidBrushCache.cs" />
+    <Compile Include="Graphics\Images.cs" />
+    <Compile Include="Graphics\Layer.cs" />
+    <Compile Include="Graphics\Coordinate.cs" />
+    <Compile Include="Graphics\DefaultSkin.cs" />
+    <Compile Include="Graphics\Margin.cs" />
+    <Compile Include="Graphics\Padding.cs" />
+    <Compile Include="Graphics\AlignMode.cs" />
+    <Compile Include="Graphics\Orientation.cs" />
+    <Compile Include="Graphics\StringFormatCache.cs" />
+    <Compile Include="Graphics\Cache\ImageCache.cs" />
+    <Compile Include="Graphics\BaseDrawing.cs" />
+    <Compile Include="Graphics\CharRangHelper.cs" />
+    <Compile Include="Graphics\MeasureStringHelper.cs" />
+    <Compile Include="IO\BinaryReaderTool.cs" />
+    <Compile Include="IO\FileHelper.cs" />
+    <Compile Include="IO\ExcelFormat.cs" />
+    <Compile Include="IO\FileInfoCollection.cs" />
+    <Compile Include="IO\FileBuffer.cs" />
+    <Compile Include="IO\FileReadCacheCollection.cs" />
+    <Compile Include="IO\BitConver.cs" />
+    <Compile Include="IO\DirectorInfo.cs" />
+    <Compile Include="Net\DTP\DtpProtocolParse.cs" />
+    <Compile Include="Net\Extensions\Client\ClientExtendCertificate.cs" />
+    <Compile Include="Net\Extensions\Server\ServerExtendCertificate.cs" />
+    <Compile Include="Net\FireWall\FileFireWall.cs" />
+    <Compile Include="Net\FireWall\UserFireWall.cs" />
+    <Compile Include="Net\FireWall\FireWallBase.cs" />
+    <Compile Include="Net\FireWall\ConnectionFireWall.cs" />
+    <Compile Include="Net\Http\HttpTools\HttpServer.cs" />
+    <Compile Include="Net\Http\HttpTools\HttpClient.cs" />
+    <Compile Include="Project\ColumnIndex.cs" />
+    <Compile Include="Project\PermissionManage.cs" />
+    <Compile Include="Project\ServiceHelper.cs" />
+    <Compile Include="Project\UserManage.cs" />
+    <Compile Include="Script\Json\JsonException.cs" />
+    <Compile Include="Script\Json\FJson.cs" />
+    <Compile Include="Script\Json\FJsonParse.cs" />
+    <Compile Include="Script\Watch.cs" />
+    <Compile Include="Script\SQL\SqlLexer.cs" />
+    <Compile Include="Script\SQL\SqlSelectStatementSection.cs" />
+    <Compile Include="Script\SQL\Statement\StatementSelect.cs" />
+    <Compile Include="Script\Json\Lexer.cs" />
+    <Compile Include="Script\Json\SymbolTable.cs" />
+    <Compile Include="Script\Json\Token.cs" />
+    <Compile Include="Script\Json\TokenType.cs" />
+    <Compile Include="Net\Extensions\FileServerResourceManager.cs" />
+    <Compile Include="Net\Extensions\Client\ClientExtendCluster.cs" />
+    <Compile Include="Net\Extensions\Server\ServerExtendCluster.cs" />
+    <Compile Include="Net\Http\HttpTools\JsonObj.cs" />
+    <Compile Include="Net\Http\HttpTools\JsonParse.cs" />
+    <Compile Include="Net\Protocol\PacketTool.cs" />
+    <Compile Include="Net\Base\NetServer.cs" />
+    <Compile Include="Net\Extensions\Client\ClientExtendSqlServer.cs" />
+    <Compile Include="Net\Extensions\Server\ServerExtendFile.cs" />
+    <Compile Include="Net\Extensions\Server\ServerExtendSqlServer.cs" />
+    <Compile Include="Net\Extensions\Server\ServerExtendUdpP2P.cs" />
+    <Compile Include="Net\Extensions\Client\ClientExtendFile.cs" />
+    <Compile Include="Net\Extensions\Server\ServerExtendBase.cs" />
+    <Compile Include="Net\Extensions\Client\ClientExtendBase.cs" />
+    <Compile Include="Net\Extensions\Client\ClientExtendUdpP2P.cs" />
+    <Compile Include="Net\Extensions\Client\ClientExtendUser.cs" />
+    <Compile Include="Net\Extensions\Server\ServerExtendUser.cs" />
+    <Compile Include="Net\Extensions\Server\ServerExtendKernal.cs" />
+    <Compile Include="Net\Extensions\Client\ClientExtendKernal.cs" />
+    <Compile Include="Net\Http\HttpTools\WebService.cs" />
+    <Compile Include="Forms\Profiler\frmNetProfiler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Profiler\frmNetProfiler.Designer.cs">
+      <DependentUpon>frmNetProfiler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Profiler\TcpClientProFiler.cs" />
+    <Compile Include="Net\Protocol\Protocol.cs" />
+    <Compile Include="Net\Protocol\NetResultCache.cs" />
+    <Compile Include="Net\Proxy\NetClient.cs" />
+    <Compile Include="Net\Base\NetErrorTool.cs" />
+    <Compile Include="Net\Protocol\PacketNetResult.cs" />
+    <Compile Include="Net\Base\ConnectState.cs" />
+    <Compile Include="Net\Proxy\IClientProxy.cs" />
+    <Compile Include="Net\Proxy\ClientProxyState.cs" />
+    <Compile Include="Net\Proxy\TcpClientProxyBase.cs" />
+    <Compile Include="Net\Proxy\UdpClientProxyBase.cs" />
+    <Compile Include="Net\Tcp\TcpClient\TcpClientEvent.cs" />
+    <Compile Include="Net\Tcp\TcpServer\TcpServerEvent.cs" />
+    <Compile Include="Net\Tcp\TcpServer\TcpAsyncClientProxy.cs" />
+    <Compile Include="Net\Proxy\ClientProxyBase.cs" />
+    <Compile Include="Net\Tcp\TcpServer\ClientProxyFactory.cs" />
+    <Compile Include="Net\UDP\UdpClient\UdpCompletionPortClient.cs" />
+    <Compile Include="Net\UDP\UdpClient\UdpAsyncClient.cs" />
+    <Compile Include="Net\UDP\UdpClient\SocketAsyncEventArgsPool.cs" />
+    <Compile Include="Net\UDP\UdpClient\UdpClient.cs" />
+    <Compile Include="Net\UDP\UdpServer\UdpServer.cs" />
+    <Compile Include="Net\Base\NetInfo.cs" />
+    <Compile Include="Net\UDP\UdpServer\UdpClientProxy.cs" />
+    <Compile Include="Net\UDP\UdpServer\UdpCompletionPortServer.cs" />
+    <Compile Include="Office\Interface.cs" />
+    <Compile Include="Pattern\ActionPattern\IteratorPattern.cs" />
+    <Compile Include="Pattern\ActionPattern\ObserverPattern.cs" />
+    <Compile Include="Pattern\ActionPattern\MediatorPattern.cs" />
+    <Compile Include="Pattern\ActionPattern\MementoPattern.cs" />
+    <Compile Include="Pattern\StructurePattern\ProxyPattern.cs" />
+    <Compile Include="Pattern\ActionPattern\CommandPattern.cs" />
+    <Compile Include="Pattern\CreatePattern\SingletonPattern.cs" />
+    <Compile Include="Pattern\Pattern.cs" />
+    <Compile Include="Pattern\CreatePattern\AbstractFactoryPattern.cs" />
+    <Compile Include="Pattern\CreatePattern\BuilderPattern.cs" />
+    <Compile Include="Pattern\CreatePattern\FactoryMethodPattern.cs" />
+    <Compile Include="Pattern\CreatePattern\PrototypePattern.cs" />
+    <Compile Include="Pattern\StructurePattern\AdapterPattern.cs" />
+    <Compile Include="Pattern\StructurePattern\BridgePattern.cs" />
+    <Compile Include="Pattern\StructurePattern\DecoratorPattern.cs" />
+    <Compile Include="Pattern\StructurePattern\CompositePattern.cs" />
+    <Compile Include="Pattern\StructurePattern\FacadePattern.cs" />
+    <Compile Include="Pattern\StructurePattern\FlyweightPattern.cs" />
+    <Compile Include="Pattern\ActionPattern\TemplateMethodPattern.cs" />
+    <Compile Include="Print\PrintArgs.cs" />
+    <Compile Include="Print\IInterface.cs" />
+    <Compile Include="Print\PrintPageBase.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Script\DNF\Cexp.cs" />
+    <Compile Include="Script\DNF\exp.cs" />
+    <Compile Include="SysHelper\SysEvents\SysBeginEvent.cs" />
+    <Compile Include="System\PerformanceMonitoring.cs" />
+    <Compile Include="System\DetailException.cs" />
+    <Compile Include="System\Cache.cs" />
+    <Compile Include="System\CacheStack.cs" />
+    <Compile Include="System\BugReport.cs" />
+    <Compile Include="Utils\KeyboardHook.cs" />
+    <Compile Include="ZFile\ProjectInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ZFile\ProjectInstaller.Designer.cs">
+      <DependentUpon>ProjectInstaller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Sound\Wav\LogHelper.cs" />
+    <Compile Include="SysHelper\frmSysEventSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SysHelper\frmSysEventSet.Designer.cs">
+      <DependentUpon>frmSysEventSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SysHelper\frmSysEventMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SysHelper\frmSysEventMainForm.Designer.cs">
+      <DependentUpon>frmSysEventMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SysHelper\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SysHelper\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SysHelper\frmRandom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SysHelper\SysEventsFile.cs" />
+    <Compile Include="SysHelper\SysEvents\MouseWheelDownSysEvents.cs" />
+    <Compile Include="SysHelper\SysEvents\ScreenImageSysEvents.cs" />
+    <Compile Include="SysHelper\SysEvents\OnTimeSysEvents.cs" />
+    <Compile Include="SysHelper\frmTimeSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SysHelper\frmSysEventMainFormTree.cs" />
+    <Compile Include="SysHelper\frmSysEventMainFormTree.Designer.cs">
+      <DependentUpon>frmSysEventMainFormTree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SysHelper\SysEvents\ImageClickSysEvent.cs" />
+    <Compile Include="System\Service.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="System\ErrorCode.cs" />
+    <Compile Include="System\BaseNode.cs" />
+    <Compile Include="System\WindowsHelper.cs" />
+    <Compile Include="System\Constants.cs" />
+    <Compile Include="Utils\ConvertHelper.cs" />
+    <Compile Include="Data\QueryMode.cs" />
+    <Compile Include="Forms\Forms\Event.cs" />
+    <Compile Include="Forms\Forms\DataSetting.cs" />
+    <Compile Include="Forms\Forms\frmSaveSusess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Forms\frmSaveSusess.Designer.cs">
+      <DependentUpon>frmSaveSusess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Forms\SplashForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Forms\SplashForm.designer.cs">
+      <DependentUpon>SplashForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Forms\SplashFormBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Forms\SplashFormBase.designer.cs">
+      <DependentUpon>SplashFormBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dialogs\ColorDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\ColorDialog.Designer.cs">
+      <DependentUpon>ColorDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Forms\DownLoadSplashForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Forms\DownLoadSplashForm.designer.cs">
+      <DependentUpon>DownLoadSplashForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dialogs\InputDialogTwoEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\InputDialogTwoEdit.Designer.cs">
+      <DependentUpon>InputDialogTwoEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SysHelper\MouseClickGetPostionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\DataConnectionSettingDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\DataConnectionSettingDialog.Designer.cs">
+      <DependentUpon>DataConnectionSettingDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Graphics\ColorHelper.cs" />
+    <Compile Include="Graphics\GraphicsHelper.cs" />
+    <Compile Include="Graphics\ImageHelper.cs" />
+    <Compile Include="Forms\Forms\HScrollerBase.cs" />
+    <Compile Include="IO\FileFilter.cs" />
+    <Compile Include="Net\Http\HttpTools\WebResponseDownLoadFile.cs" />
+    <Compile Include="Net\Interface\ISqlClient.cs" />
+    <Compile Include="Net\Base\UpdateFile.cs" />
+    <Compile Include="Net\Http\HttpTools\WebRequest.cs" />
+    <Compile Include="Net\Http\HttpTools\WebResponse.cs" />
+    <Compile Include="IO\Compress.cs" />
+    <Compile Include="IO\LastFiles.cs" />
+    <Compile Include="IO\PathHelper.cs" />
+    <Compile Include="IO\LogHelper.cs" />
+    <Compile Include="IO\DESPlus.cs" />
+    <Compile Include="SysHelper\SysEvents\SysEvents.cs" />
+    <Compile Include="System\RegeditHelper.cs" />
+    <Compile Include="Utils\DataLock.cs" />
+    <Compile Include="Utils\KeyHook.cs" />
+    <Compile Include="Net\ICMP\IcmpPacket.cs" />
+    <Compile Include="Net\ICMP\PingHelper.cs" />
+    <Compile Include="Net\Base\AsyncResultBase.cs" />
+    <Compile Include="Net\Base\enum.cs" />
+    <Compile Include="Net\Tcp\TcpServer\TcpClientProxyCollection.cs" />
+    <Compile Include="Net\Base\NetFileInfo.cs" />
+    <Compile Include="Net\Protocol\PacketMainCmd.cs" />
+    <Compile Include="Net\Protocol\PacketSubCmd.cs" />
+    <Compile Include="Net\Protocol\PacketMode.cs" />
+    <Compile Include="Net\Protocol\PacketType.cs" />
+    <Compile Include="Net\Base\TcpSocketMode.cs" />
+    <Compile Include="Net\Base\NetCallBacks.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SysHelper\WebBrowerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IO\BaseReader.cs" />
+    <Compile Include="IO\BaseWriter.cs" />
+    <Compile Include="IO\DEncrypt.cs" />
+    <Compile Include="Net\Base\delegate.cs" />
+    <Compile Include="Utils\RegexHelper.cs" />
+    <Compile Include="Office\EventArgs.cs" />
+    <Compile Include="Data\IDbHelper.cs" />
+    <Compile Include="Net\Base\IndexObject.cs" />
+    <Compile Include="Forms\Dialogs\InputTextDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\InputTextDialog.Designer.cs">
+      <DependentUpon>InputTextDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Net\Base\Netinterface.cs" />
+    <Compile Include="Data\MsDbHelper.cs" />
+    <Compile Include="Data\DbHelperSQL.cs" />
+    <Compile Include="Net\Base\MsSqlClient.cs" />
+    <Compile Include="Net\Protocol\PacketHelper.cs" />
+    <Compile Include="IO\SerializableHelper.cs" />
+    <Compile Include="Utils\ExceptionHelper.cs" />
+    <Compile Include="Office\IInterface.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="System\SendKeys.cs" />
+    <Compile Include="Utils\ReflectionHelper.cs" />
+    <Compile Include="Office\DataSetting.cs" />
+    <Compile Include="Net\Base\Settings.cs" />
+    <Compile Include="Net\Tcp\TcpClient\TcpClient.cs" />
+    <Compile Include="Net\Tcp\TcpServer\TcpClientProxy.cs" />
+    <Compile Include="Net\Tcp\TcpServer\TcpServer.cs" />
+    <Compile Include="Net\Base\StateObject.cs" />
+    <Compile Include="IO\BufferReader.cs" />
+    <Compile Include="IO\BufferWriter.cs" />
+    <Compile Include="Data\ModleInfo.cs" />
+    <Compile Include="Net\Tcp\TcpClient\UserClientCollection.cs" />
+    <Compile Include="Forms\Dialogs\InputNumberDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\InputNumberDialog.Designer.cs">
+      <DependentUpon>InputNumberDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dialogs\InputDateTimeDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\InputDateTimeDialog.Designer.cs">
+      <DependentUpon>InputDateTimeDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\CompareHelper.cs" />
+    <Compile Include="Utils\MouseHook.cs" />
+    <Compile Include="Utils\TraceHelper.cs" />
+    <Compile Include="Utils\CnNumber.cs" />
+    <Compile Include="Utils\UnsafeNativeMethods.cs" />
+    <Compile Include="App\Product.cs" />
+    <Compile Include="Office\TextContens.cs" />
+    <Compile Include="Update\UpdateInfo.cs" />
+    <Compile Include="Forms\Forms\VScrollerBase.cs" />
+    <Compile Include="App\Systeminfo.cs" />
+    <Compile Include="IO\Setting.cs" />
+    <Compile Include="System\WindowInfo.cs" />
+    <Compile Include="Utils\StringBuilderHelper.cs" />
+    <Compile Include="Utils\MsgBox.cs" />
+    <Compile Include="Utils\MathHelper.cs" />
+    <Compile Include="Utils\TextHelper.cs" />
+    <Compile Include="Utils\RandomCache.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\ApprovalProcess\LabelColor.resx">
+      <DependentUpon>LabelColor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controls\Chart\SeriesCollection.resx">
+      <DependentUpon>SeriesCollection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controls\Chart\Series.resx">
+      <DependentUpon>Series.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controls\Chart\Pane.resx">
+      <DependentUpon>Pane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controls\Chart\PaneCollection.resx">
+      <DependentUpon>PaneCollection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controls\Chart\Axis.resx">
+      <DependentUpon>Axis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controls\Chart\XAxis.resx">
+      <DependentUpon>XAxis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controls\Chart\YAxis.resx">
+      <DependentUpon>YAxis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controls\GridView\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controls\TitleControl\TitleImageView.resx">
+      <DependentUpon>TitleImageView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controls\TitleControl\TitleImageViewItemCollection.resx">
+      <DependentUpon>TitleImageViewItemCollection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controls\ToolBar\ToolBarItemDropDownForm.resx">
+      <DependentUpon>ToolBarItemDropDownForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controls\ToolBar\ToolBar.resx">
+      <DependentUpon>ToolBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controls\ToolBar\ToolBarItem.resx">
+      <DependentUpon>ToolBarItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controls\ToolBar\ToolBarItemCollection.resx">
+      <DependentUpon>ToolBarItemCollection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controls\MonthBox.resx">
+      <DependentUpon>MonthBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controls\WaintingBox.resx">
+      <DependentUpon>WaintingBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controls\TimeBox.resx">
+      <DependentUpon>TimeBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controls\VScroller.resx">
+      <DependentUpon>VScroller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controls\Chart\Chart.resx">
+      <DependentUpon>Chart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controls\ListImageView.resx">
+      <DependentUpon>ListImageView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controls\ListImageViewItemCollection.resx">
+      <DependentUpon>ListImageViewItemCollection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controls\BeginAndEndDateTimeBox.resx">
+      <DependentUpon>BeginAndEndDateTimeBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controls\Input.resx">
+      <DependentUpon>Input.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controls\ToolBar\ToolBarViewControl.resx">
+      <DependentUpon>ToolBarViewControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controls\ToolBar\ToolBarViewBrowerControl.resx">
+      <DependentUpon>ToolBarViewBrowerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Forms\BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Forms\TreeViewDialog.resx">
+      <DependentUpon>TreeViewDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Forms\SelectInputDateTimeDialog.resx">
+      <DependentUpon>SelectInputDateTimeDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Forms\TextDialog.resx">
+      <DependentUpon>TextDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Popup\DropDownBox.resx">
+      <DependentUpon>DropDownBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DataProject\FillDataDialog.resx">
+      <DependentUpon>FillDataDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controls\GridView\GridViewColumnDialog.resx">
+      <DependentUpon>GridViewColumnDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\frmIPAddressDialog.resx">
+      <DependentUpon>frmIPAddressDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Forms\frmSaveSusess.resx">
+      <DependentUpon>frmSaveSusess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\InputTextDialog.resx">
+      <DependentUpon>InputTextDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\InputNumberDialog.resx">
+      <DependentUpon>InputNumberDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\InputDateTimeDialog.resx">
+      <DependentUpon>InputDateTimeDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\InputMonthDialog.resx">
+      <DependentUpon>InputMonthDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\InputYearDialog.resx">
+      <DependentUpon>InputYearDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\InputBetweenMonthDialog.resx">
+      <DependentUpon>InputBetweenMonthDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Forms\WaitingForm2.resx">
+      <DependentUpon>WaitingForm2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\BugReport.resx">
+      <DependentUpon>BugReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\RegexDialog.resx">
+      <DependentUpon>RegexDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controls\HScroller.resx">
+      <DependentUpon>HScroller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Forms\DownLoadWaitingForm.resx">
+      <DependentUpon>DownLoadWaitingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Forms\SamllWaitingForm.resx">
+      <DependentUpon>SamllWaitingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\InputDialogSendkeys.resx">
+      <DependentUpon>InputDialogSendkeys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\InputMultilineDialog.resx">
+      <DependentUpon>InputMultilineDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\ErrorDialog.resx">
+      <DependentUpon>ErrorDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\InputPasswordDialog.resx">
+      <DependentUpon>InputPasswordDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\InputModifyPasswordDialog.resx">
+      <DependentUpon>InputModifyPasswordDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Forms\WaitingForm.resx">
+      <DependentUpon>WaitingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Popup\DropDownListBox.resx">
+      <DependentUpon>DropDownListBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Popup\DropDownListForm.resx">
+      <DependentUpon>DropDownListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Popup\ToolTipForm.resx">
+      <DependentUpon>ToolTipForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Popup\PopuplForm.resx">
+      <DependentUpon>PopuplForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Popup\PopupBaseForm.resx">
+      <DependentUpon>PopupBaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Forms\PrintSetting.resx">
+      <DependentUpon>PrintSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Script\Function\FunctionExtion\Form\FrmTable.resx">
+      <DependentUpon>FrmTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Script\CBEexpress\Test\frmTest.resx">
+      <DependentUpon>frmTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SysHelper\SysEvents\SysBeginEvent.resx">
+      <DependentUpon>SysBeginEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZFile\ProjectInstaller.resx">
+      <DependentUpon>ProjectInstaller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Profiler\frmNetProfiler.resx">
+      <DependentUpon>frmNetProfiler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SysHelper\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SysHelper\frmSysEventMainForm.resx">
+      <DependentUpon>frmSysEventMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SysHelper\frmSysEventSet.resx">
+      <DependentUpon>frmSysEventSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SysHelper\MouseClickGetPostionForm.resx">
+      <DependentUpon>MouseClickGetPostionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Forms\SplashForm.resx">
+      <DependentUpon>SplashForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Forms\SplashFormBase.resx">
+      <DependentUpon>SplashFormBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\ColorDialog.resx">
+      <DependentUpon>ColorDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Forms\DownLoadSplashForm.resx">
+      <DependentUpon>DownLoadSplashForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\InputDialogTwoEdit.resx">
+      <DependentUpon>InputDialogTwoEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\DataConnectionSettingDialog.resx">
+      <DependentUpon>DataConnectionSettingDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Forms\frmButtonTest.resx">
+      <DependentUpon>frmButtonTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controls\Button.resx">
+      <DependentUpon>Button.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SysHelper\SysEvents\MouseWheelDownSysEvents.resx">
+      <DependentUpon>MouseWheelDownSysEvents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SysHelper\SysEvents\ScreenImageSysEvents.resx">
+      <DependentUpon>ScreenImageSysEvents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SysHelper\SysEvents\OnTimeSysEvents.resx">
+      <DependentUpon>OnTimeSysEvents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SysHelper\SysEvents\ImageClickSysEvent.resx">
+      <DependentUpon>ImageClickSysEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SysHelper\WebBrowerForm.resx">
+      <DependentUpon>WebBrowerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SysHelper\SysEvents\SysEvents.resx">
+      <DependentUpon>SysEvents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SysHelper\frmRandom.resx">
+      <DependentUpon>frmRandom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SysHelper\frmTimeSet.resx">
+      <DependentUpon>frmTimeSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SysHelper\frmSysEventMainFormTree.resx">
+      <DependentUpon>frmSysEventMainFormTree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="System\Service.resx">
+      <DependentUpon>Service.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\Click.ico" />
+    <None Include="Resources\ToolBarClose.png" />
+    <None Include="Resources\ToolBarClose2.png" />
+    <None Include="Resources\Copy.png" />
+    <None Include="Resources\gem_options.png" />
+    <None Include="Resources\arrow_state_blue_expanded.png" />
+    <None Include="Resources\Sortup.png" />
+    <None Include="Resources\Sortdown.png" />
+    <None Include="Resources\ArrowUp.png" />
+    <None Include="Resources\ArrowDown.png" />
+    <None Include="Resources\arrow_state_blue_expandno.png" />
+    <None Include="Resources\GridViewControl.png" />
+    <EmbeddedResource Include="Images\GridViewControl.bmp" />
+    <None Include="Resources\bule_del_2.png" />
+    <None Include="Resources\bule_max.png" />
+    <None Include="Resources\bule_min.png" />
+    <None Include="Resources\bule_add.png" />
+    <None Include="Resources\net_deconnect.png" />
+    <None Include="Resources\arrow_state_blue_finish.png" />
+    <None Include="Resources\net_connected.png" />
+    <Content Include="Script\Json\JsonRule.txt" />
+    <Content Include="ZFile\SQL编码规范.txt" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="ZFile\系统.txt" />
+    <Content Include="ZFile\编码规范.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Forms\Popup\Menu\" />
+    <Folder Include="Forms\View\MVVCP\Client\" />
+    <Folder Include="Forms\View\MVVCP\Controller\" />
+    <Folder Include="Forms\View\MVVCP\Model\" />
+    <Folder Include="Forms\View\MVVCP\Style\" />
+    <Folder Include="Forms\View\MVVCP\View\" />
+    <Folder Include="Graphics\Extends\" />
+    <Folder Include="Net\App\" />
+    <Folder Include="Script\CBScript\" />
+    <Folder Include="Script\C\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

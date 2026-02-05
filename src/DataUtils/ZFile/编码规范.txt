@@ -1,0 +1,12 @@
+﻿1.类内部字段全使用下划线加上小写表示。		e.g. _name=string.Empty;
+2.类属性大小表示。							e.g. Name;
+3.函数传递参数使用全小写表示。				e.g. void GetNameByAge(string name);
+try
+{
+ 
+}
+catch (Exception ex)
+{
+    Feng.Utils.BugReport.Log(ex);
+    Feng.Utils.TraceHelper.WriteTrace("DataDesign", "frmMain2", "statusSum_Click", ex);
+}

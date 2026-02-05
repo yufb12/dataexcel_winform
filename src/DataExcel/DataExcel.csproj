@@ -1,0 +1,757 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C7AE2C94-610C-4981-800D-F878B6406A84}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Feng.Excel</RootNamespace>
+    <AssemblyName>DataExcel.v2.1</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <StartupObject>
+    </StartupObject>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>PublickKey.snk</AssemblyOriginatorKeyFile>
+    <ManifestCertificateThumbprint>3A60ECF7BFD9EA930788535654DE055D6C959E19</ManifestCertificateThumbprint>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
+    <GenerateManifests>false</GenerateManifests>
+    <TargetZone>LocalIntranet</TargetZone>
+    <SignManifests>false</SignManifests>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>http://localhost/DataExcel/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Background</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <BootstrapperComponentsLocation>Relative</BootstrapperComponentsLocation>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;SHOWABOUT</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <RegisterForComInterop>true</RegisterForComInterop>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;GONG2</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Optimize>false</Optimize>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;GONG</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;SHOWABOUT</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>true</RegisterForComInterop>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Design">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Management">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.XML">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutBox.Designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Action\PropertyAction.cs" />
+    <Compile Include="Action\PropertyActionTools.cs" />
+    <Compile Include="Action\ActionArgs.cs" />
+    <Compile Include="Base\Cell_Property.cs" />
+    <Compile Include="Base\Cell_Perty.cs" />
+    <Compile Include="Base\Column_Property.cs" />
+    <Compile Include="CellEdit\Delete\CellDropDownDate.cs" />
+    <Compile Include="CellEdit\Edit\CellDropDownFillter.cs" />
+    <Compile Include="CellEdit\Edit\CellEdit2.cs" />
+    <Compile Include="CellEdit\Edit\CellEditDropDown\CellDropDownFillterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CellEdit\Edit\CellTimer.cs" />
+    <Compile Include="CellEdit\Edit\CellSplitColumn.cs" />
+    <Compile Include="CellEdit\Edit\CellSplitRow.cs" />
+    <Compile Include="CellEdit\Edit\Form\CellImageShow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CellEdit\Edit\Form\CellImageShow.Designer.cs">
+      <DependentUpon>CellImageShow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Extent\CommandLine.cs" />
+    <Compile Include="Filter\FillterDropDownForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Filter\Sorter.cs" />
+    <Compile Include="Filter\FilterExcelCellView.cs" />
+    <Compile Include="Filter\Filter.cs" />
+    <Compile Include="Form\frmColumnWidth.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmColumnWidth.Designer.cs">
+      <DependentUpon>frmColumnWidth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FrmReplace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmReplace.Designer.cs">
+      <DependentUpon>FrmReplace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Function\FunctionExtends\DataExcelStatisticsFunctionContainer.cs" />
+    <Compile Include="Function\ScriptLogOutWatch.cs" />
+    <Compile Include="IO\ReadInfo.cs" />
+    <Compile Include="Main\ADataExcelView\DataExcelToJsonGrid.cs" />
+    <Compile Include="Main\ADataExcelView\DataExcelFile2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Main\ADataExcelView\DataExcelFillter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MViewes\BiaoChi\HorizontalRuler.cs" />
+    <Compile Include="CellEdit\EditControlBuilder.cs" />
+    <Compile Include="CellEdit\Edit\CellFileSelectEdit.cs" />
+    <Compile Include="CellEdit\Edit\EditCellExcel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CellEdit\Edit\EditCellTextBoxEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CellEdit\Edit\EditCellNumber.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CellEdit\Delete\EditCellDateTime.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CellEdit\Edit\EditCellComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CellEdit\Edit\EditCellCnNumber.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CellEdit\Edit\EditCellCnCurrency.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CellEdit\Edit\CellDropDownDateTime.cs" />
+    <Compile Include="CellEdit\Edit\CellEditDropDown\CellDropDownDataExcelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CellEdit\Edit\CellProcess.cs" />
+    <Compile Include="CellEdit\Edit\CellEditDropDown\CellEditDropDownBase.cs" />
+    <Compile Include="CellEdit\Edit\CellEditDropDown\CellEditDropDownBaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CellEdit\Edit\CellEditDropDown\CellEditDropDownBaseForm.Designer.cs">
+      <DependentUpon>CellEditDropDownBaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataProject\Base\DAL\DataProjectGridIDValue.cs" />
+    <Compile Include="DataProject\Base\DefaultExtend.cs" />
+    <Compile Include="DataProject\Base\Model\DataProjectGridIDValue.cs" />
+    <Compile Include="DataProject\PacketCmd_DataProjectExtend.cs" />
+    <Compile Include="MViewes\Extend\VScrollerView.cs" />
+    <Compile Include="MViewes\Extend\HScrollerView.cs" />
+    <Compile Include="Form\frmDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmDialog.Designer.cs">
+      <DependentUpon>frmDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FrmFind.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmFind.Designer.cs">
+      <DependentUpon>FrmFind.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Function\FunctionExtends\CellEditFunctionContainer.cs" />
+    <Compile Include="Function\FunctionExtends\CellEditTreeViewFunctionContainer.cs" />
+    <Compile Include="Function\FunctionExtends\CellEditGridViewFunctionContainer.cs" />
+    <Compile Include="Form\frmPopupGrid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmPopupGrid.Designer.cs">
+      <DependentUpon>frmPopupGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Function\FunctionExtends\FunctionTools.cs" />
+    <Compile Include="Function\FunctionExtends\ScriptFunctionContainer.cs" />
+    <Compile Include="Function\FunctionExtends\DataExcelTableFunctionContainer.cs" />
+    <Compile Include="Function\FunctionExtends\DrawFunctionContainer.cs" />
+    <Compile Include="Function\FunctionExtends\SelectFunctionContainer.cs" />
+    <Compile Include="Function\FunctionExtends\DataExcelFunctionContainer.cs" />
+    <Compile Include="Function\FunctionExtends\DataExcelColumnFunctionContainer.cs" />
+    <Compile Include="Function\FunctionExtends\DataExcelRowFunctionContainer.cs" />
+    <Compile Include="Function\ScriptBuilder.cs" />
+    <Compile Include="CellEdit\Edit\CellVector.cs" />
+    <Compile Include="CellEdit\Edit\CellFolderBrowserEdit.cs" />
+    <Compile Include="CellEdit\Edit\CellMoveForm.cs" />
+    <Compile Include="CellEdit\Edit\CellPassword.cs" />
+    <Compile Include="CellEdit\Edit\CellSwitch.cs" />
+    <Compile Include="CellEdit\EditControlCollection.cs" />
+    <Compile Include="CellEdit\Edit\CellTreeView.cs" />
+    <Compile Include="CellEdit\Edit\CellDropDownDataExcel.cs" />
+    <Compile Include="CellEdit\Edit\CellEdit.cs" />
+    <Compile Include="CellEdit\Edit\CellColor.cs" />
+    <Compile Include="Command\CommandText.cs" />
+    <Compile Include="Command\CommandLine.cs" />
+    <Compile Include="Designer\CompositeKeyDescription.cs" />
+    <Compile Include="Designer\DataExcelDesignerForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Designer\DataExcelDesignerForm2.Designer.cs">
+      <DependentUpon>DataExcelDesignerForm2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MViewes\Extend\RightKeyExtend.cs" />
+    <Compile Include="MViewes\Extend\ReticleDrawExtend.cs" />
+    <Compile Include="Field\FieldTableInfo.cs" />
+    <Compile Include="Field\FieldRowInfo.cs" />
+    <Compile Include="Field\FieldCellInfo.cs" />
+    <Compile Include="Form\frmBrower.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmBrower.Designer.cs">
+      <DependentUpon>frmBrower.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FrmGOLine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmGOLine.Designer.cs">
+      <DependentUpon>FrmGOLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Function\Script\CBDataExcelScript.cs" />
+    <Compile Include="IO\InputPanel.cs" />
+    <Compile Include="Main\ADataExcelView\DataExcelControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Main\ADataExcelView\DataExcelCombinKeyInit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Main\ADataExcelView\DataExcelCombinKey.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Main\ADataExcelView\DataExcelFileNew.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Main\ADataExcelView\DataExcelSelectMove.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Main\ADataExcelView\DataExcelSetSelect.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Main\ADataExcelView\DataExcelOverride.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Main\ADataExcelView\DataExcelRowColumnCell.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Main\ADataExcelView\DataExcelOnDraw.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Main\BookMarkList.cs" />
+    <Compile Include="Main\FocsedCellList.cs" />
+    <Compile Include="Main\ADataExcelView\DataExcelUpdateSetSelect.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Main\DataExcelTool.cs" />
+    <Compile Include="Function\Script\DataExcelScriptStmtProxy.cs" />
+    <Compile Include="Plus\EditInfo.cs" />
+    <Compile Include="Plus\DisplayArea.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Select\MergeCellCollectionRect.cs" />
+    <Compile Include="Select\SelectAddRectCollection.cs" />
+    <Compile Include="Select\RowFillter.cs" />
+    <Compile Include="Select\SelectRangeCollection.cs" />
+    <Compile Include="Select\SelectRowCollection.cs" />
+    <Compile Include="Utils\Table\CellTable.cs" />
+    <Compile Include="Utils\Table\TableTools.cs" />
+    <Compile Include="Utils\Table\CellDataBase.cs" />
+    <Compile Include="Test\StaticTest.cs" />
+    <Compile Include="Base\CellEditCollection.cs" />
+    <Compile Include="Base\FieldCellection.cs" />
+    <Compile Include="Base\ExpressionCellection.cs" />
+    <Compile Include="Base\IDCellection.cs" />
+    <Compile Include="Base\Temp\Cell.cs" />
+    <Compile Include="CellEdit\Edit\CellImage.cs" />
+    <Compile Include="CellEdit\Edit\CellLabel.cs" />
+    <Compile Include="CellEdit\Edit\CellCheckBox.cs" />
+    <Compile Include="CellEdit\Edit\ColumnFooter.cs" />
+    <Compile Include="CellEdit\Edit\ColumnHeader.cs" />
+    <Compile Include="CellEdit\Edit\CellLinkLabel.cs" />
+    <Compile Include="CellEdit\Edit\CellSpText.cs" />
+    <Compile Include="CellEdit\Edit\CellRadioCheckBox.cs" />
+    <Compile Include="CellEdit\Edit\CellRowHeader.cs" />
+    <Compile Include="CellEdit\Edit\CellBaseEdit.cs" />
+    <Compile Include="CellEdit\Edit\CellGridView.cs" />
+    <Compile Include="CellEdit\Edit\CellButton.cs" />
+    <Compile Include="CellEdit\Edit\CellToolBar.cs" />
+    <Compile Include="Designer\UpdateInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Designer\PaperNameDesigner.cs" />
+    <Compile Include="Designer\PaperKindConverter.cs" />
+    <Compile Include="Designer\PropertyEventDesigner.cs" />
+    <Compile Include="MViewes\ExtendCell\GridView.cs" />
+    <Compile Include="MViewes\ExtendCell\GridViewCollection.cs" />
+    <Compile Include="Field\FieldDataBaseInfo.cs" />
+    <Compile Include="Designer\DataExcelDesignerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Designer\DataExcelDesignerForm.Designer.cs">
+      <DependentUpon>DataExcelDesignerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\selDropDownForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\selDropDownForm.Designer.cs">
+      <DependentUpon>selDropDownForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Function\FunctionExtends\DataExcelCellFunctionContainer.cs" />
+    <Compile Include="Function\FunctionExtends\StatisticsFunctionContainer.cs" />
+    <Compile Include="Function\FunctionExtends\DataExcelFileFunctionContainer.cs" />
+    <Compile Include="Graphics\GraphicsHelper.cs" />
+    <Compile Include="Main\ADataExcelView\DataExcelFile.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Main\ADataExcelView\DataExcelAction.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Print\PrintArgs.cs" />
+    <Compile Include="Main\Product.cs" />
+    <Compile Include="Select\CellRangeCollection.cs" />
+    <Compile Include="Utils\AssemblyLoadttribute.cs" />
+    <Compile Include="Base\BrushManage.cs" />
+    <Compile Include="Base\FunctionCell.cs" />
+    <Compile Include="Base\ColorManage.cs" />
+    <Compile Include="Base\FunctionCellection.cs" />
+    <Compile Include="Base\ClassFactory.cs" />
+    <Compile Include="Base\IBrushManage.cs" />
+    <Compile Include="Base\IClassFactory.cs" />
+    <Compile Include="Base\ICursorManage.cs" />
+    <Compile Include="Base\IFunctionCell.cs" />
+    <Compile Include="Base\IPenManage.cs" />
+    <Compile Include="Base\PenManage.cs" />
+    <Compile Include="Base\BackCell.cs" />
+    <Compile Include="Base\BackCellCollection.cs" />
+    <Compile Include="Base\CellChangedCollection.cs" />
+    <Compile Include="Base\Command.cs" />
+    <Compile Include="MViewes\BiaoChi\VerticalRuler.cs" />
+    <Compile Include="MViewes\BiaoChi\IRuler.cs" />
+    <Compile Include="MViewes\ExtendCell\Chart\IDataExcelChart.cs" />
+    <Compile Include="MViewes\ExtendCell\Chart\ISeriesCollection.cs" />
+    <Compile Include="MViewes\ExtendCell\Chart\SeriesCollection.cs" />
+    <Compile Include="MViewes\ExtendCell\Chart\Series.cs" />
+    <Compile Include="MViewes\ExtendCell\Chart\ChartTtitle.cs" />
+    <Compile Include="MViewes\ExtendCell\Chart\Legend.cs" />
+    <Compile Include="MViewes\ExtendCell\Chart\AxisX.cs" />
+    <Compile Include="MViewes\ExtendCell\Chart\AxisY.cs" />
+    <Compile Include="MViewes\ExtendCell\Chart\Title.cs" />
+    <Compile Include="MViewes\ExtendCell\Chart\TitleCollection.cs" />
+    <Compile Include="MViewes\ExtendCell\Chart\SeriesValue.cs" />
+    <Compile Include="MViewes\ExtendCell\Chart\SeriesValueCollection.cs" />
+    <Compile Include="Command\UndoRedo\BaseCommand.cs" />
+    <Compile Include="Designer\ComboxEditDesigner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Designer\FileIDDesigner.cs" />
+    <Compile Include="Main\FilterInfo.cs" />
+    <Compile Include="Form\frmBorder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmBorder.Designer.cs">
+      <DependentUpon>frmBorder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Plus\IPlusBase.cs" />
+    <Compile Include="Plus\Plus.cs" />
+    <Compile Include="Print\PrintFooter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Print\PrintHeader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Main\SortInfo.cs" />
+    <Compile Include="Main\ADataExcelView\DataExcelEvent.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Main\ADataExcelView\DataExcelPrinter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Main\ADataExcelView\DataExcelProperty.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Designer\AboutDesigner.cs" />
+    <Compile Include="Designer\ComboxEdit.cs" />
+    <Compile Include="Designer\ComboxEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Designer\DataExcelActionList.cs" />
+    <Compile Include="Designer\DataExcelDesigner.cs" />
+    <Compile Include="Designer\HomePageDesigner.cs" />
+    <Compile Include="Designer\ColumnDesigner.cs" />
+    <Compile Include="Designer\EditNull.cs" />
+    <Compile Include="Designer\DataColumnDesigner.cs" />
+    <Compile Include="Designer\DataMemberDesignerDesigner.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ExcelLicense\DataExcelLicenseProvider.cs" />
+    <Compile Include="ExcelLicense\DataExcelLicenseType.cs" />
+    <Compile Include="ExcelLicense\ProductKind.cs" />
+    <Compile Include="ExcelLicense\DataExcelLicense.cs" />
+    <Compile Include="MViewes\ExtendCell\BaseExtendCell.cs" />
+    <Compile Include="MViewes\ExtendCell\DataExcelChartCellCollection.cs" />
+    <Compile Include="MViewes\ExtendCell\ImageCell.cs" />
+    <Compile Include="MViewes\ExtendCell\Chart\DataExcelChart.cs" />
+    <Compile Include="Main\Forecast.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Function\MethodArgsTool.cs" />
+    <Compile Include="IntserFace\InterfaceCollection.cs" />
+    <Compile Include="IntserFace\ICommand.cs" />
+    <Compile Include="IntserFace\ICommandServer.cs" />
+    <Compile Include="IntserFace\Gacutil.cs" />
+    <Compile Include="IntserFace\Gacutil.Designer.cs">
+      <DependentUpon>Gacutil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IntserFace\Interface.cs" />
+    <Compile Include="IntserFace\InterfaceBase.cs" />
+    <Compile Include="IO\BinaryReader.cs" />
+    <Compile Include="IO\BinaryWriter.cs" />
+    <Compile Include="Print\Page.cs" />
+    <Compile Include="Print\PrintSettingDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Print\PrintSettingDialog.Designer.cs">
+      <DependentUpon>PrintSettingDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Print\PrintPageHeader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Print\PrintPageHeader.Designer.cs">
+      <DependentUpon>PrintPageHeader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Print\PrintPageFooter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Print\PrintPageFooter.Designer.cs">
+      <DependentUpon>PrintPageFooter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Print\PrintSetting.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Main\SendKeys.cs" />
+    <Compile Include="Designer\TypeConverter\ColumnTypeConverter.cs" />
+    <Compile Include="Base\IMergeCell.cs" />
+    <Compile Include="Function\Function.cs" />
+    <Compile Include="Graphics\BorderStyle.cs" />
+    <Compile Include="Graphics\LineAmount.cs" />
+    <Compile Include="Graphics\LineStyle.cs" />
+    <Compile Include="Main\KeyHook.cs" />
+    <Compile Include="Print\DataPrintDocument.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Main\DataRectHelper.cs" />
+    <Compile Include="Base\MergeCell.cs" />
+    <Compile Include="Select\ISelectCellCollection.cs" />
+    <Compile Include="Main\ExceptionManage.cs" />
+    <Compile Include="Select\SelectMode.cs" />
+    <Compile Include="MViewes\ExtendCell\ImageCellCollection.cs" />
+    <Compile Include="Main\ADataExcelView\DataExcelHelper.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utils\DataExcelTools.cs" />
+    <Compile Include="Utils\DataColors.cs" />
+    <Compile Include="Main\DataExcelEnum.cs" />
+    <Compile Include="Base\Cell.cs" />
+    <Compile Include="Base\CellCollection.cs" />
+    <Compile Include="Base\Column.cs">
+    </Compile>
+    <Compile Include="Base\ColumnCollection.cs" />
+    <Compile Include="Main\ADataExcelView\DataExcel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Main\DataExcelEventHandler.cs" />
+    <Compile Include="Main\DataExcelSetting.cs" />
+    <Compile Include="Main\DataException.cs" />
+    <Compile Include="Main\ExceptionString.cs" />
+    <Compile Include="Main\Program.cs" />
+    <Compile Include="Base\Row.cs" />
+    <Compile Include="Base\RowCollection.cs" />
+    <Compile Include="Select\SelectCellCollection.cs" />
+    <Compile Include="MViewes\ExtendCell\ExtendCell.cs" />
+    <Compile Include="MViewes\ExtendCell\ExtendCellCollection.cs" />
+    <Compile Include="Main\DrawHelper.cs">
+    </Compile>
+    <Compile Include="Base\MergeCellCollection.cs" />
+    <Compile Include="Select\MergeCellCollectionAddRect.cs" />
+    <Compile Include="Main\DataExcelEventHandlerArgs.cs" />
+    <Compile Include="Main\TabList.cs" />
+    <Compile Include="Main\HotKeyList.cs" />
+    <Compile Include="Main\ADataExcelView\DataExcelDataBing.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Main\DataExcelCode.cs" />
+    <Compile Include="Regedit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Regedit.Designer.cs">
+      <DependentUpon>Regedit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\DataExcelException.cs" />
+    <Compile Include="AppConfig.cs" />
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AboutBox.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CellEdit\Delete\CellDropDownDate.resx">
+      <DependentUpon>CellDropDownDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CellEdit\Edit\CellEditDropDown\CellDropDownFillterForm.resx">
+      <DependentUpon>CellDropDownFillterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CellEdit\Edit\CellEditDropDown\CellEditDropDownBaseForm.resx">
+      <DependentUpon>CellEditDropDownBaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CellEdit\Edit\Form\CellImageShow.resx">
+      <DependentUpon>CellImageShow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designer\DataExcelDesignerForm.resx">
+      <DependentUpon>DataExcelDesignerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designer\DataExcelDesignerForm2.resx">
+      <DependentUpon>DataExcelDesignerForm2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Filter\FillterDropDownForm.resx">
+      <DependentUpon>FillterDropDownForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmDialog.resx">
+      <DependentUpon>frmDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmBrower.resx">
+      <DependentUpon>frmBrower.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmColumnWidth.resx">
+      <DependentUpon>frmColumnWidth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmReplace.resx">
+      <DependentUpon>FrmReplace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmFind.resx">
+      <DependentUpon>FrmFind.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmGOLiNE.resx">
+      <DependentUpon>FrmGOLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\selDropDownForm.resx">
+      <DependentUpon>selDropDownForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmPopupGrid.resx">
+      <DependentUpon>frmPopupGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Print\PrintSettingDialog.resx">
+      <DependentUpon>PrintSettingDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Print\PrintPageHeader.resx">
+      <DependentUpon>PrintPageHeader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Print\PrintPageFooter.resx">
+      <DependentUpon>PrintPageFooter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Regedit.resx">
+      <DependentUpon>Regedit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Bitmap256\DataExcelBmp.bmp" />
+    <EmbeddedResource Include="Designer\ComboxEditDesigner.resx">
+      <DependentUpon>ComboxEditDesigner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designer\ComboxEditForm.resx">
+      <DependentUpon>ComboxEditForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmBorder.resx">
+      <DependentUpon>frmBorder.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\image16_SortAsc.png" />
+    <None Include="Image\image16_SortDesc.png" />
+    <EmbeddedResource Include="Image\cross.png" />
+    <EmbeddedResource Include="Designer\UpdateInfoForm.resx">
+      <DependentUpon>UpdateInfoForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Image\AdvancedFilterDialog1.png" />
+    <EmbeddedResource Include="Image\DataExcel.CUR" />
+    <None Include="PublickKey.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Base\List\" />
+    <Folder Include="CellEdit\EditEvent\" />
+    <Folder Include="CellEdit\Edit\CellGridViewEdit\" />
+    <Folder Include="Form\Scroller\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.manifest">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataUtils\DataUtils.csproj">
+      <Project>{aa6199fc-1673-4759-a38b-79e3a7e141a6}</Project>
+      <Name>DataUtils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>
