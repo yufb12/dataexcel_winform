@@ -1412,13 +1412,10 @@
     <None Include="Resources\arrow_state_blue_finish.png" />
     <None Include="Resources\net_connected.png" />
     <Content Include="Script\Json\JsonRule.txt" />
-    <Content Include="ZFile\SQL编码规范.txt" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Content Include="ZFile\系统.txt" />
-    <Content Include="ZFile\编码规范.txt" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
