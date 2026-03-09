@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FE1539CA-333F-441E-A77A-FECF0F81ABFF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CFusion.Post</RootNamespace>
+    <AssemblyName>CFusion.Post</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>I:\发布\pt\postmain\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>false</MapFileExtensions>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>17</ApplicationRevision>
+    <ApplicationVersion>1.0.12.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisIgnoreGeneratedCode>true</CodeAnalysisIgnoreGeneratedCode>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>8E09A7234CE53F2F15EAB870629CEF5B428ADC99</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>CFusion.Post_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>home.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DataExcel.v2.1, Version=2.11.15.69, Culture=neutral, PublicKeyToken=225866d19dd3ad02, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Tool\OpenSource\SysTools\test\DataExcel\bin\x86\Debug\DataExcel.v2.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DataUtils.v2.1, Version=2.11.15.69, Culture=neutral, PublicKeyToken=225866d19dd3ad02, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Tool\OpenSource\SysTools\test\DataExcel\bin\x86\Debug\DataUtils.v2.1.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Http\function\HttpToolMethodContainer.cs" />
+    <Compile Include="Http\post\ctrlPostControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Http\post\ctrlPostControl.Designer.cs">
+      <DependentUpon>ctrlPostControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Http\post\Edit\TextBoxEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Http\post\frmPostMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Http\post\frmPostMain.Designer.cs">
+      <DependentUpon>frmPostMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Http\post\PostMainHttpHelper.cs" />
+    <Compile Include="Http\post\NetHelper.cs" />
+    <Compile Include="Http\Tool\DsUpdater.cs" />
+    <Compile Include="Http\Tool\StringEscapeUtility.cs" />
+    <Compile Include="Http\Tool\RecycleHelper.cs" />
+    <Compile Include="Http\Tool\JsonHelper.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="CFusion.Post_TemporaryKey.pfx" />
+    <None Include="Http\post\Image\NodeAddDirecoty16x16.png" />
+    <None Include="Http\post\Image\NodeAddFile_16x16.png" />
+    <None Include="Http\post\Image\NodeRemove_16x16.png" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Resources\OpenHyperlink_16x16.png" />
+    <None Include="Resources\SaveFileAs.png" />
+    <None Include="Resources\ClearAll.png" />
+    <None Include="Resources\SaveAsTemplate_16x16.png" />
+    <None Include="Resources\postmain_responsecheckrememberresult.png" />
+    <None Include="Resources\postmain_responsecheckrememberresultUn.png" />
+    <Content Include="home.ico" />
+    <Content Include="Icon\home.ico" />
+    <Content Include="Lib\Newtonsoft.Json.dll" />
+    <None Include="Resources\postmain_projecttreerefresh.png" />
+    <None Include="Resources\postmain_projecttreeredirectory.png" />
+    <None Include="Resources\postmain_projecttreerefile.png" />
+    <None Include="Resources\Paste_16x16.png" />
+    <None Include="Resources\Action_Debug_Stop.png" />
+    <None Include="Resources\Action_Debug_Start.png" />
+    <None Include="Resources\Action_Debug_Step.png" />
+    <None Include="Resources\Action_PauseRecording.png" />
+    <None Include="Resources\StepOver_6328.png" />
+    <None Include="Resources\StepIn_6326.png" />
+    <None Include="Resources\Stepout_6327.png" />
+    <None Include="Resources\Symbols_Pause_16xLG.png" />
+    <None Include="Resources\Pause_16x.png" />
+    <None Include="Resources\Pause_grey_16x.png" />
+    <None Include="Resources\Close_12x_16x.png" />
+    <None Include="Resources\Lock_16x.png" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Http\post\ctrlPostControl.resx">
+      <DependentUpon>ctrlPostControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Http\post\frmPostMain.resx">
+      <DependentUpon>frmPostMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icon\view_Design_16x16.png" />
+    <None Include="Icon\view_AlignmentCenterVertically_16x16.png" />
+    <None Include="Icon\view_AlignmentMiddles_16x16.png" />
+    <None Include="Icon\view_Refresh_Monochrome.png" />
+    <None Include="Icon\view_Scripts.png" />
+    <None Include="Image\notification_copy.png" />
+    <Content Include="Lib\MySql.Data.dll" />
+    <Content Include="Lib\SQLite.Interop.dll" />
+    <Content Include="Lib\System.Data.SQLite.dll" />
+    <None Include="Resources\BubbleCharts.Icon.png" />
+    <None Include="Resources\BreakevenAnalysis.Icon.png" />
+    <None Include="Resources\BoundModeModule.Icon.png" />
+    <None Include="Resources\BioLifePrintingTable.Icon.png" />
+    <None Include="Resources\BioLifePrintingLabels.Icon.png" />
+    <None Include="Resources\BioLifePrintingGroups.Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="Lib\MySql.Data.dll">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Lib\Newtonsoft.Json.dll">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Lib\SQLite.Interop.dll">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Lib\System.Data.SQLite.dll">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,117 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETFramework,Version=v4.0": {
+      "ICSharpCode.TextEditor/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/ICSharpCode.TextEditor.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ICSharpCode.TextEditor.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.0/win": {
+      "ICSharpCode.TextEditor/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/ICSharpCode.TextEditor.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ICSharpCode.TextEditor.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.0/win-x64": {
+      "ICSharpCode.TextEditor/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/ICSharpCode.TextEditor.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ICSharpCode.TextEditor.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.0/win-x86": {
+      "ICSharpCode.TextEditor/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/ICSharpCode.TextEditor.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ICSharpCode.TextEditor.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ICSharpCode.TextEditor/1.0.0": {
+      "type": "project",
+      "path": "../ICSharpCode.TextEditor/ICSharpCode.TextEditor.csproj",
+      "msbuildProject": "../ICSharpCode.TextEditor/ICSharpCode.TextEditor.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETFramework,Version=v4.0": [
+      "ICSharpCode.TextEditor >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Administrator\\.nuget\\packages\\": {},
+    "h:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "I:\\SCADA\\26SVN\\MYINFO\\ProjectTool\\History\\RestSharp\\RestSharp.csproj",
+      "projectName": "RestSharp",
+      "projectPath": "I:\\SCADA\\26SVN\\MYINFO\\ProjectTool\\History\\RestSharp\\RestSharp.csproj",
+      "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+      "outputPath": "I:\\SCADA\\26SVN\\MYINFO\\ProjectTool\\History\\RestSharp\\obj\\",
+      "projectStyle": "PackageReference",
+      "skipContentFileWrite": true,
+      "fallbackFolders": [
+        "h:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net40"
+      ],
+      "sources": {
+        "E:\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {},
+        "https://nuget.org/api/v2/": {},
+        "https://www.nuget.org/api/v2/": {}
+      },
+      "frameworks": {
+        "net40": {
+          "projectReferences": {
+            "I:\\SCADA\\26SVN\\MYINFO\\ProjectTool\\History\\ICSharpCode.TextEditor\\ICSharpCode.TextEditor.csproj": {
+              "projectPath": "I:\\SCADA\\26SVN\\MYINFO\\ProjectTool\\History\\ICSharpCode.TextEditor\\ICSharpCode.TextEditor.csproj"
+            }
+          }
+        }
+      }
+    },
+    "frameworks": {
+      "net40": {}
+    },
+    "runtimes": {
+      "win": {
+        "#import": []
+      },
+      "win-x64": {
+        "#import": []
+      },
+      "win-x86": {
+        "#import": []
+      }
+    }
+  }
+}

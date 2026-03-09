@@ -1,0 +1,75 @@
+{
+  "format": 1,
+  "restore": {
+    "I:\\SCADA\\26SVN\\MYINFO\\ProjectTool\\History\\RestSharp\\RestSharp.csproj": {}
+  },
+  "projects": {
+    "I:\\SCADA\\26SVN\\MYINFO\\ProjectTool\\History\\ICSharpCode.TextEditor\\ICSharpCode.TextEditor.csproj": {
+      "restore": {
+        "projectUniqueName": "I:\\SCADA\\26SVN\\MYINFO\\ProjectTool\\History\\ICSharpCode.TextEditor\\ICSharpCode.TextEditor.csproj",
+        "projectName": "ICSharpCode.TextEditor",
+        "projectPath": "I:\\SCADA\\26SVN\\MYINFO\\ProjectTool\\History\\ICSharpCode.TextEditor\\ICSharpCode.TextEditor.csproj",
+        "frameworks": {
+          "net40": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net40": {}
+      }
+    },
+    "I:\\SCADA\\26SVN\\MYINFO\\ProjectTool\\History\\RestSharp\\RestSharp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "I:\\SCADA\\26SVN\\MYINFO\\ProjectTool\\History\\RestSharp\\RestSharp.csproj",
+        "projectName": "RestSharp",
+        "projectPath": "I:\\SCADA\\26SVN\\MYINFO\\ProjectTool\\History\\RestSharp\\RestSharp.csproj",
+        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+        "outputPath": "I:\\SCADA\\26SVN\\MYINFO\\ProjectTool\\History\\RestSharp\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "h:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net40"
+        ],
+        "sources": {
+          "E:\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.org/api/v2/": {},
+          "https://www.nuget.org/api/v2/": {}
+        },
+        "frameworks": {
+          "net40": {
+            "projectReferences": {
+              "I:\\SCADA\\26SVN\\MYINFO\\ProjectTool\\History\\ICSharpCode.TextEditor\\ICSharpCode.TextEditor.csproj": {
+                "projectPath": "I:\\SCADA\\26SVN\\MYINFO\\ProjectTool\\History\\ICSharpCode.TextEditor\\ICSharpCode.TextEditor.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net40": {}
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}
