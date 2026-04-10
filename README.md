@@ -1,4 +1,4 @@
-# DataExcel_WinForm Complete Official Document
+﻿# DataExcel_WinForm Complete Official Document
 
 # I. Product Introduction
 
@@ -180,5 +180,4 @@ The source code of this component follows the corresponding open source license.
 
 - For the Web version JS Excel online plug-in, please refer to the corresponding open source repository
 
-- If this project is helpful to you, please give it a ⭐ Star
-> （注：文档部分内容可能由 AI 生成）
+- If this project is helpful to you, please give it a ? Star
