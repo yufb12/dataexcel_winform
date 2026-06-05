@@ -24,7 +24,22 @@ namespace Feng.IO
                 return System.IO.Path.Combine(StartupPath, USERDATA);
             }
         }
-
+        public static string ReadAllText(string file, System.Text.Encoding encoding)
+        {
+            if (!System.IO.File.Exists(file))
+            {
+                return string.Empty;
+            }
+            return System.IO.File.ReadAllText(file, encoding);
+        }
+        public static void WriteAllText(string file, string txt, System.Text.Encoding encoding)
+        {
+            if (!System.IO.File.Exists(file))
+            {
+                CreatDirctory(file);
+            }
+            System.IO.File.WriteAllText(file, txt, encoding);
+        }
         public static string ReadAllText(string file)
         {
             if (!System.IO.File.Exists(file))

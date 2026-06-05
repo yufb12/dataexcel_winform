@@ -46,9 +46,26 @@
         {
             get
             {
-                return
+                 string file=
 Feng.IO.FileHelper.Combine(GetRoot(),
 "\\Config\\Server\\Setting" + Feng.App.FileExtension_DataExcel.DataExcel);
+                if (System.IO.File.Exists(file))
+                {
+                    return file;
+                }
+                string tempfile = file + ".tmp";
+                if (System.IO.File.Exists(tempfile))
+                {
+                    try
+                    {
+                        Feng.IO.FileHelper.Move(file,tempfile);
+                    }
+                    catch (System.Exception ex)
+                    {
+                        System.Windows.Forms.MessageBox.Show("未获取足够的权限,服务器配置文件配置失败:"+ex.Message);
+                    }
+                }
+                return file;
             }
         }
 
