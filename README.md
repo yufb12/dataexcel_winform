@@ -14,7 +14,7 @@ This component has comprehensive functions, superior to similar controls such as
 |Latest Source Code Update Repository|https://github.com/yufb12/netexcel/tree/main (Note: This link reports "invalid link", please refer to the main repository)|
 |NuGet Official Package|https://www.nuget.org/packages/DataExcel/|
 |Web Version Repository|https://github.com/yufb12/dataexcel|
-|Official Documentation & Demo Site|www.dataexcel.cn, www.dataexcel.com|
+|Official Documentation & Demo Site|www.dataexcel.cn|
 |Technical Blog|https://dbrwe.blog.csdn.net/article/details/133317079, https://dbrwe.blog.csdn.net/article/details/132655473|
 # III. Version and Basic Information
 
