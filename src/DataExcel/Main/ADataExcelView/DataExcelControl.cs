@@ -110,6 +110,11 @@ namespace Feng.Excel
             }
         }
 
+        public virtual void ReSize()
+        {
+            OnSizeChanged(new EventArgs());
+        }
+
         protected override void OnSizeChanged(EventArgs e)
         {  
             try
