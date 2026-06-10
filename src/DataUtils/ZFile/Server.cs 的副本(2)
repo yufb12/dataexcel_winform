@@ -1,0 +1,1753 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Security.Cryptography;
+using System.Reflection;
+
+namespace Feng.Office
+{
+
+    public static class Server
+    {
+        public static bool ProcessExit = false;
+
+        public const int WM_CUT = 0x0300;
+        public const int WM_COPY = 0x0301;
+        public const int WM_PASTE = 0x0302;
+        public const int WM_VALITATE = 0x7852;
+
+        public static string GetMd5Hash(string input)
+        {
+            MD5CryptoServiceProvider md5Hasher = new MD5CryptoServiceProvider();
+            byte[] data = md5Hasher.ComputeHash(Encoding.Unicode.GetBytes(input));
+            StringBuilder sBuilder = new StringBuilder();
+            for (int i = 0; i < data.Length; i++)
+            {
+                sBuilder.Append(data[i].ToString("x2"));
+            }
+            return sBuilder.ToString();
+        }
+
+        private static byte[] GetMd5(byte[] data)
+        {
+            MD5CryptoServiceProvider hashmd5 = new MD5CryptoServiceProvider();
+            byte[] keyhash = hashmd5.ComputeHash(data);
+            hashmd5 = null;
+            return keyhash;
+        }
+
+        /// <summary>
+        /// 解码
+        /// </summary>
+        public static byte[] Decrypt(byte[] data, byte[] key)
+        {
+            TripleDESCryptoServiceProvider desserver = new TripleDESCryptoServiceProvider();
+            desserver.Key = GetMd5(key);
+            desserver.Mode = CipherMode.ECB;
+            return desserver.CreateDecryptor().TransformFinalBlock(data, 0, data.Length);
+        }
+
+        public static byte[] Encrypt(byte[] data, byte[] key)
+        {
+            TripleDESCryptoServiceProvider desserver = new TripleDESCryptoServiceProvider();
+            desserver.Key = GetMd5(key);
+            desserver.Mode = CipherMode.ECB;
+            return desserver.CreateEncryptor().TransformFinalBlock(data, 0, data.Length);
+        }
+  
+ 
+        public static void SetValue(PropertyInfo pt, object obj, object strvalue)
+        {
+            if (strvalue != null)
+            {
+                if (pt.PropertyType == strvalue.GetType())
+                {
+                    pt.SetValue(obj, strvalue, null);
+                    return;
+                }
+
+                if (strvalue.GetType() == typeof(string))
+                {
+                    SetingValue(pt, obj, (string)strvalue);
+                    return;
+                }
+                if (strvalue.GetType() == typeof(decimal))
+                {
+                    SetingValue(pt, obj, (decimal)strvalue);
+                    return;
+                }
+                if (strvalue.GetType() == typeof(double))
+                {
+                    SetingValue(pt, obj, (double)strvalue);
+                    return;
+                }
+                if (strvalue.GetType() == typeof(float))
+                {
+                    SetingValue(pt, obj, (float)strvalue);
+                    return;
+                }
+                if (strvalue.GetType() == typeof(bool))
+                {
+                    SetingValue(pt, obj, (bool)strvalue);
+                    return;
+                }
+                if (strvalue.GetType() == typeof(byte))
+                {
+                    SetingValue(pt, obj, (byte)strvalue);
+                    return;
+                }
+                if (strvalue.GetType() == typeof(sbyte))
+                {
+                    SetingValue(pt, obj, (sbyte)strvalue);
+                    return;
+                }
+                if (strvalue.GetType() == typeof(Int16))
+                {
+                    SetingValue(pt, obj, (Int16)strvalue);
+                    return;
+                }
+                if (strvalue.GetType() == typeof(Int32))
+                {
+                    SetingValue(pt, obj, (Int32)strvalue);
+                    return;
+                }
+                if (strvalue.GetType() == typeof(Int64))
+                {
+                    SetingValue(pt, obj, (Int64)strvalue);
+                    return;
+                }
+                if (strvalue.GetType() == typeof(UInt16))
+                {
+                    SetingValue(pt, obj, (UInt16)strvalue);
+                    return;
+                }
+                if (strvalue.GetType() == typeof(UInt32))
+                {
+                    SetingValue(pt, obj, (UInt32)strvalue);
+                    return;
+                }
+                if (strvalue.GetType() == typeof(UInt64))
+                {
+                    SetingValue(pt, obj, (UInt64)strvalue);
+                    return;
+                }
+                if (strvalue.GetType() == typeof(DateTime))
+                {
+                    SetingValue(pt, obj, (DateTime)strvalue);
+                    return;
+                }
+                pt.SetValue(obj, strvalue, null);
+            }
+            else
+            {
+                pt.SetValue(obj, null, null);
+            }
+        }
+
+        private static void SetingValue(PropertyInfo pt, object obj, string strvalue)
+        {
+            if (pt == null)
+                return;
+            if (pt.PropertyType == typeof(bool))
+            {
+                bool value = false;
+                if (bool.TryParse(strvalue, out value))
+                {
+                    pt.SetValue(obj, value, null);
+                }
+                else
+                {
+
+                    pt.SetValue(obj, false, null);
+                }
+                return;
+            }
+
+            if (pt.PropertyType == typeof(Int16))
+            {
+                Int16 value;
+                if (Int16.TryParse(strvalue, out value))
+                {
+                    pt.SetValue(obj, value, null);
+                }
+                else
+                {
+                    pt.SetValue(obj, value, null);
+                }
+                return;
+            }
+            if (pt.PropertyType == typeof(Int32))
+            {
+                Int32 value;
+                if (Int32.TryParse(strvalue, out value))
+                {
+                    pt.SetValue(obj, value, null);
+                }
+                else
+                {
+                    pt.SetValue(obj, value, null);
+                }
+                return;
+            }
+            if (pt.PropertyType == typeof(Int64))
+            {
+                Int64 value;
+                if (Int64.TryParse(strvalue, out value))
+                {
+                    pt.SetValue(obj, value, null);
+                }
+                else
+                {
+                    pt.SetValue(obj, value, null);
+                }
+                return;
+            }
+            if (pt.PropertyType == typeof(UInt16))
+            {
+                UInt16 value;
+                if (UInt16.TryParse(strvalue, out value))
+                {
+                    pt.SetValue(obj, value, null);
+                }
+                else
+                {
+                    pt.SetValue(obj, value, null);
+                }
+                return;
+            }
+            if (pt.PropertyType == typeof(UInt32))
+            {
+                UInt32 value;
+                if (UInt32.TryParse(strvalue, out value))
+                {
+                    pt.SetValue(obj, value, null);
+                }
+                else
+                {
+                    pt.SetValue(obj, value, null);
+                }
+                return;
+            }
+            if (pt.PropertyType == typeof(UInt64))
+            {
+                UInt64 value;
+                if (UInt64.TryParse(strvalue, out value))
+                {
+                    pt.SetValue(obj, value, null);
+                }
+                else
+                {
+                    pt.SetValue(obj, value, null);
+                }
+                return;
+            }
+            if (pt.PropertyType == typeof(float))
+            {
+                float value;
+                if (float.TryParse(strvalue, out value))
+                {
+                    pt.SetValue(obj, value, null);
+                }
+                else
+                {
+                    pt.SetValue(obj, value, null);
+                }
+                return;
+            }
+            if (pt.PropertyType == typeof(double))
+            {
+                double value;
+                if (double.TryParse(strvalue, out value))
+                {
+                    pt.SetValue(obj, value, null);
+                }
+                else
+                {
+                    pt.SetValue(obj, value, null);
+                }
+                return;
+            }
+            if (pt.PropertyType == typeof(decimal))
+            {
+                decimal value;
+                if (decimal.TryParse(strvalue, out value))
+                {
+                    pt.SetValue(obj, value, null);
+                }
+                else
+                {
+                    pt.SetValue(obj, value, null);
+                }
+                return;
+            }
+            if (pt.PropertyType == typeof(DateTime))
+            {
+                DateTime value;
+                if (DateTime.TryParse(strvalue, out value))
+                {
+                    pt.SetValue(obj, value, null);
+                }
+                else
+                {
+                    pt.SetValue(obj, value, null);
+                }
+                return;
+            }
+            if (pt.PropertyType == typeof(Enum))
+            {
+                Int32 value;
+                if (Int32.TryParse(strvalue, out value))
+                {
+                    pt.SetValue(obj, value, null);
+                }
+                else
+                {
+                    pt.SetValue(obj, value, null);
+                }
+                return;
+            }
+            if (pt.PropertyType == typeof(string))
+            {
+                pt.SetValue(obj, strvalue, null);
+            }
+            else
+            {
+                pt.SetValue(obj, null, null);
+            }
+            pt.SetValue(obj, null, null);
+        }
+
+        private static void SetingValue(PropertyInfo pt, object obj, decimal rvalue)
+        {
+            if (pt == null)
+                return;
+            if (pt.PropertyType == typeof(bool))
+            {
+                bool value = Convert.ToBoolean(rvalue);
+                pt.SetValue(obj, false, null);
+
+                return;
+            }
+
+            if (pt.PropertyType == typeof(Int16))
+            {
+                Int16 value = Convert.ToInt16(rvalue);
+                pt.SetValue(obj, value, null);
+
+                return;
+            }
+            if (pt.PropertyType == typeof(Int32))
+            {
+                Int32 value = Convert.ToInt32(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(Int64))
+            {
+                Int64 value = Convert.ToInt64(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(UInt16))
+            {
+                UInt16 value = Convert.ToUInt16(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(UInt32))
+            {
+                UInt32 value = Convert.ToUInt32(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(UInt64))
+            {
+                UInt64 value = Convert.ToUInt64(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(float))
+            {
+                float value = Convert.ToSingle(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(double))
+            {
+                double value = Convert.ToDouble(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(decimal))
+            {
+                decimal value = Convert.ToDecimal(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(DateTime))
+            {
+                DateTime value = Convert.ToDateTime(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(Enum))
+            {
+                Int32 value = Convert.ToInt32(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(string))
+            {
+                string value = Convert.ToString(rvalue);
+                pt.SetValue(obj, rvalue, null);
+                return;
+            }
+            pt.SetValue(obj, null, null);
+        }
+
+        private static void SetingValue(PropertyInfo pt, object obj, double rvalue)
+        {
+            if (pt == null)
+                return;
+            if (pt.PropertyType == typeof(bool))
+            {
+                bool value = Convert.ToBoolean(rvalue);
+                pt.SetValue(obj, false, null);
+
+                return;
+            }
+
+            if (pt.PropertyType == typeof(Int16))
+            {
+                Int16 value = Convert.ToInt16(rvalue);
+                pt.SetValue(obj, value, null);
+
+                return;
+            }
+            if (pt.PropertyType == typeof(Int32))
+            {
+                Int32 value = Convert.ToInt32(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(Int64))
+            {
+                Int64 value = Convert.ToInt64(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(UInt16))
+            {
+                UInt16 value = Convert.ToUInt16(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(UInt32))
+            {
+                UInt32 value = Convert.ToUInt32(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(UInt64))
+            {
+                UInt64 value = Convert.ToUInt64(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(float))
+            {
+                float value = Convert.ToSingle(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(double))
+            {
+                double value = Convert.ToDouble(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(decimal))
+            {
+                decimal value = Convert.ToDecimal(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(DateTime))
+            {
+                DateTime value = Convert.ToDateTime(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(Enum))
+            {
+                Int32 value = Convert.ToInt32(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(string))
+            {
+                string value = Convert.ToString(rvalue);
+                pt.SetValue(obj, rvalue, null);
+                return;
+            }
+            pt.SetValue(obj, null, null);
+        }
+
+        private static void SetingValue(PropertyInfo pt, object obj, float rvalue)
+        {
+            if (pt == null)
+                return;
+            if (pt.PropertyType == typeof(bool))
+            {
+                bool value = Convert.ToBoolean(rvalue);
+                pt.SetValue(obj, false, null);
+
+                return;
+            }
+
+            if (pt.PropertyType == typeof(Int16))
+            {
+                Int16 value = Convert.ToInt16(rvalue);
+                pt.SetValue(obj, value, null);
+
+                return;
+            }
+            if (pt.PropertyType == typeof(Int32))
+            {
+                Int32 value = Convert.ToInt32(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(Int64))
+            {
+                Int64 value = Convert.ToInt64(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(UInt16))
+            {
+                UInt16 value = Convert.ToUInt16(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(UInt32))
+            {
+                UInt32 value = Convert.ToUInt32(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(UInt64))
+            {
+                UInt64 value = Convert.ToUInt64(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(float))
+            {
+                float value = Convert.ToSingle(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(double))
+            {
+                double value = Convert.ToDouble(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(decimal))
+            {
+                decimal value = Convert.ToDecimal(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(DateTime))
+            {
+                DateTime value = Convert.ToDateTime(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(Enum))
+            {
+                Int32 value = Convert.ToInt32(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(string))
+            {
+                string value = Convert.ToString(rvalue);
+                pt.SetValue(obj, rvalue, null);
+                return;
+            }
+            pt.SetValue(obj, null, null);
+        }
+
+        private static void SetingValue(PropertyInfo pt, object obj, UInt64 rvalue)
+        {
+            if (pt == null)
+                return;
+            if (pt.PropertyType == typeof(bool))
+            {
+                bool value = Convert.ToBoolean(rvalue);
+                pt.SetValue(obj, false, null);
+
+                return;
+            }
+
+            if (pt.PropertyType == typeof(Int16))
+            {
+                Int16 value = Convert.ToInt16(rvalue);
+                pt.SetValue(obj, value, null);
+
+                return;
+            }
+            if (pt.PropertyType == typeof(Int32))
+            {
+                Int32 value = Convert.ToInt32(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(Int64))
+            {
+                Int64 value = Convert.ToInt64(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(UInt16))
+            {
+                UInt16 value = Convert.ToUInt16(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(UInt32))
+            {
+                UInt32 value = Convert.ToUInt32(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(UInt64))
+            {
+                UInt64 value = Convert.ToUInt64(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(float))
+            {
+                float value = Convert.ToSingle(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(double))
+            {
+                double value = Convert.ToDouble(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(decimal))
+            {
+                decimal value = Convert.ToDecimal(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(DateTime))
+            {
+                DateTime value = Convert.ToDateTime(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(Enum))
+            {
+                Int32 value = Convert.ToInt32(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(string))
+            {
+                string value = Convert.ToString(rvalue);
+                pt.SetValue(obj, rvalue, null);
+                return;
+            }
+            pt.SetValue(obj, null, null);
+        }
+
+        private static void SetingValue(PropertyInfo pt, object obj, UInt32 rvalue)
+        {
+            if (pt == null)
+                return;
+            if (pt.PropertyType == typeof(bool))
+            {
+                bool value = Convert.ToBoolean(rvalue);
+                pt.SetValue(obj, false, null);
+
+                return;
+            }
+
+            if (pt.PropertyType == typeof(Int16))
+            {
+                Int16 value = Convert.ToInt16(rvalue);
+                pt.SetValue(obj, value, null);
+
+                return;
+            }
+            if (pt.PropertyType == typeof(Int32))
+            {
+                Int32 value = Convert.ToInt32(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(Int64))
+            {
+                Int64 value = Convert.ToInt64(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(UInt16))
+            {
+                UInt16 value = Convert.ToUInt16(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(UInt32))
+            {
+                UInt32 value = Convert.ToUInt32(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(UInt64))
+            {
+                UInt64 value = Convert.ToUInt64(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(float))
+            {
+                float value = Convert.ToSingle(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(double))
+            {
+                double value = Convert.ToDouble(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(decimal))
+            {
+                decimal value = Convert.ToDecimal(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(DateTime))
+            {
+                DateTime value = Convert.ToDateTime(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(Enum))
+            {
+                Int32 value = Convert.ToInt32(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(string))
+            {
+                string value = Convert.ToString(rvalue);
+                pt.SetValue(obj, rvalue, null);
+                return;
+            }
+            pt.SetValue(obj, null, null);
+        }
+
+        private static void SetingValue(PropertyInfo pt, object obj, UInt16 rvalue)
+        {
+            if (pt == null)
+                return;
+            if (pt.PropertyType == typeof(bool))
+            {
+                bool value = Convert.ToBoolean(rvalue);
+                pt.SetValue(obj, false, null);
+
+                return;
+            }
+
+            if (pt.PropertyType == typeof(Int16))
+            {
+                Int16 value = Convert.ToInt16(rvalue);
+                pt.SetValue(obj, value, null);
+
+                return;
+            }
+            if (pt.PropertyType == typeof(Int32))
+            {
+                Int32 value = Convert.ToInt32(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(Int64))
+            {
+                Int64 value = Convert.ToInt64(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(UInt16))
+            {
+                UInt16 value = Convert.ToUInt16(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(UInt32))
+            {
+                UInt32 value = Convert.ToUInt32(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(UInt64))
+            {
+                UInt64 value = Convert.ToUInt64(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(float))
+            {
+                float value = Convert.ToSingle(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(double))
+            {
+                double value = Convert.ToDouble(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(decimal))
+            {
+                decimal value = Convert.ToDecimal(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(DateTime))
+            {
+                DateTime value = Convert.ToDateTime(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(Enum))
+            {
+                Int32 value = Convert.ToInt32(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(string))
+            {
+                string value = Convert.ToString(rvalue);
+                pt.SetValue(obj, rvalue, null);
+                return;
+            }
+            pt.SetValue(obj, null, null);
+        }
+
+        private static void SetingValue(PropertyInfo pt, object obj, Int64 rvalue)
+        {
+            if (pt == null)
+                return;
+            if (pt.PropertyType == typeof(bool))
+            {
+                bool value = Convert.ToBoolean(rvalue);
+                pt.SetValue(obj, false, null);
+
+                return;
+            }
+
+            if (pt.PropertyType == typeof(Int16))
+            {
+                Int16 value = Convert.ToInt16(rvalue);
+                pt.SetValue(obj, value, null);
+
+                return;
+            }
+            if (pt.PropertyType == typeof(Int32))
+            {
+                Int32 value = Convert.ToInt32(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(Int64))
+            {
+                Int64 value = Convert.ToInt64(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(UInt16))
+            {
+                UInt16 value = Convert.ToUInt16(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(UInt32))
+            {
+                UInt32 value = Convert.ToUInt32(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(UInt64))
+            {
+                UInt64 value = Convert.ToUInt64(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(float))
+            {
+                float value = Convert.ToSingle(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(double))
+            {
+                double value = Convert.ToDouble(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(decimal))
+            {
+                decimal value = Convert.ToDecimal(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(DateTime))
+            {
+                DateTime value = Convert.ToDateTime(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(Enum))
+            {
+                Int32 value = Convert.ToInt32(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(string))
+            {
+                string value = Convert.ToString(rvalue);
+                pt.SetValue(obj, rvalue, null);
+                return;
+            }
+            pt.SetValue(obj, null, null);
+        }
+
+        private static void SetingValue(PropertyInfo pt, object obj, Int32 rvalue)
+        {
+            if (pt == null)
+                return;
+            if (pt.PropertyType == typeof(bool))
+            {
+                bool value = Convert.ToBoolean(rvalue);
+                pt.SetValue(obj, false, null);
+
+                return;
+            }
+
+            if (pt.PropertyType == typeof(Int16))
+            {
+                Int16 value = Convert.ToInt16(rvalue);
+                pt.SetValue(obj, value, null);
+
+                return;
+            }
+            if (pt.PropertyType == typeof(Int32))
+            {
+                Int32 value = Convert.ToInt32(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(Int64))
+            {
+                Int64 value = Convert.ToInt64(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(UInt16))
+            {
+                UInt16 value = Convert.ToUInt16(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(UInt32))
+            {
+                UInt32 value = Convert.ToUInt32(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(UInt64))
+            {
+                UInt64 value = Convert.ToUInt64(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(float))
+            {
+                float value = Convert.ToSingle(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(double))
+            {
+                double value = Convert.ToDouble(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(decimal))
+            {
+                decimal value = Convert.ToDecimal(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(DateTime))
+            {
+                DateTime value = Convert.ToDateTime(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(Enum))
+            {
+                Int32 value = Convert.ToInt32(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(string))
+            {
+                string value = Convert.ToString(rvalue);
+                pt.SetValue(obj, rvalue, null);
+                return;
+            }
+            pt.SetValue(obj, null, null);
+        }
+
+        private static void SetingValue(PropertyInfo pt, object obj, Int16 rvalue)
+        {
+            if (pt == null)
+                return;
+            if (pt.PropertyType == typeof(bool))
+            {
+                bool value = Convert.ToBoolean(rvalue);
+                pt.SetValue(obj, false, null);
+
+                return;
+            }
+
+            if (pt.PropertyType == typeof(Int16))
+            {
+                Int16 value = Convert.ToInt16(rvalue);
+                pt.SetValue(obj, value, null);
+
+                return;
+            }
+            if (pt.PropertyType == typeof(Int32))
+            {
+                Int32 value = Convert.ToInt32(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(Int64))
+            {
+                Int64 value = Convert.ToInt64(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(UInt16))
+            {
+                UInt16 value = Convert.ToUInt16(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(UInt32))
+            {
+                UInt32 value = Convert.ToUInt32(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(UInt64))
+            {
+                UInt64 value = Convert.ToUInt64(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(float))
+            {
+                float value = Convert.ToSingle(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(double))
+            {
+                double value = Convert.ToDouble(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(decimal))
+            {
+                decimal value = Convert.ToDecimal(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(DateTime))
+            {
+                DateTime value = Convert.ToDateTime(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(Enum))
+            {
+                Int32 value = Convert.ToInt32(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(string))
+            {
+                string value = Convert.ToString(rvalue);
+                pt.SetValue(obj, rvalue, null);
+                return;
+            }
+            pt.SetValue(obj, null, null);
+        }
+
+
+        private static void SetingValue(PropertyInfo pt, object obj, bool rvalue)
+        {
+            if (pt == null)
+                return;
+            if (pt.PropertyType == typeof(bool))
+            {
+                bool value = Convert.ToBoolean(rvalue);
+                pt.SetValue(obj, false, null);
+
+                return;
+            }
+
+            if (pt.PropertyType == typeof(Int16))
+            {
+                Int16 value = Convert.ToInt16(rvalue);
+                pt.SetValue(obj, value, null);
+
+                return;
+            }
+            if (pt.PropertyType == typeof(Int32))
+            {
+                Int32 value = Convert.ToInt32(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(Int64))
+            {
+                Int64 value = Convert.ToInt64(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(UInt16))
+            {
+                UInt16 value = Convert.ToUInt16(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(UInt32))
+            {
+                UInt32 value = Convert.ToUInt32(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(UInt64))
+            {
+                UInt64 value = Convert.ToUInt64(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(float))
+            {
+                float value = Convert.ToSingle(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(double))
+            {
+                double value = Convert.ToDouble(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(decimal))
+            {
+                decimal value = Convert.ToDecimal(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(DateTime))
+            {
+                DateTime value = Convert.ToDateTime(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(Enum))
+            {
+                Int32 value = Convert.ToInt32(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(string))
+            {
+                string value = Convert.ToString(rvalue);
+                pt.SetValue(obj, rvalue, null);
+                return;
+            }
+            pt.SetValue(obj, null, null);
+        }
+
+        private static void SetingValue(PropertyInfo pt, object obj, byte rvalue)
+        {
+            if (pt == null)
+                return;
+            if (pt.PropertyType == typeof(bool))
+            {
+                bool value = Convert.ToBoolean(rvalue);
+                pt.SetValue(obj, false, null);
+
+                return;
+            }
+
+            if (pt.PropertyType == typeof(Int16))
+            {
+                Int16 value = Convert.ToInt16(rvalue);
+                pt.SetValue(obj, value, null);
+
+                return;
+            }
+            if (pt.PropertyType == typeof(Int32))
+            {
+                Int32 value = Convert.ToInt32(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(Int64))
+            {
+                Int64 value = Convert.ToInt64(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(UInt16))
+            {
+                UInt16 value = Convert.ToUInt16(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(UInt32))
+            {
+                UInt32 value = Convert.ToUInt32(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(UInt64))
+            {
+                UInt64 value = Convert.ToUInt64(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(float))
+            {
+                float value = Convert.ToSingle(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(double))
+            {
+                double value = Convert.ToDouble(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(decimal))
+            {
+                decimal value = Convert.ToDecimal(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(DateTime))
+            {
+                DateTime value = Convert.ToDateTime(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(Enum))
+            {
+                Int32 value = Convert.ToInt32(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(string))
+            {
+                string value = Convert.ToString(rvalue);
+                pt.SetValue(obj, rvalue, null);
+                return;
+            }
+            pt.SetValue(obj, null, null);
+        }
+
+        private static void SetingValue(PropertyInfo pt, object obj, sbyte rvalue)
+        {
+            if (pt == null)
+                return;
+            if (pt.PropertyType == typeof(bool))
+            {
+                bool value = Convert.ToBoolean(rvalue);
+                pt.SetValue(obj, false, null);
+
+                return;
+            }
+
+            if (pt.PropertyType == typeof(Int16))
+            {
+                Int16 value = Convert.ToInt16(rvalue);
+                pt.SetValue(obj, value, null);
+
+                return;
+            }
+            if (pt.PropertyType == typeof(Int32))
+            {
+                Int32 value = Convert.ToInt32(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(Int64))
+            {
+                Int64 value = Convert.ToInt64(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(UInt16))
+            {
+                UInt16 value = Convert.ToUInt16(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(UInt32))
+            {
+                UInt32 value = Convert.ToUInt32(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(UInt64))
+            {
+                UInt64 value = Convert.ToUInt64(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(float))
+            {
+                float value = Convert.ToSingle(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(double))
+            {
+                double value = Convert.ToDouble(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(decimal))
+            {
+                decimal value = Convert.ToDecimal(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(DateTime))
+            {
+                DateTime value = Convert.ToDateTime(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(Enum))
+            {
+                Int32 value = Convert.ToInt32(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(string))
+            {
+                string value = Convert.ToString(rvalue);
+                pt.SetValue(obj, rvalue, null);
+                return;
+            }
+            pt.SetValue(obj, null, null);
+        }
+
+        private static void SetingValue(PropertyInfo pt, object obj, DateTime rvalue)
+        {
+            if (pt == null)
+                return;
+            if (pt.PropertyType == typeof(bool))
+            {
+                bool value = Convert.ToBoolean(rvalue);
+                pt.SetValue(obj, false, null);
+
+                return;
+            }
+
+            if (pt.PropertyType == typeof(Int16))
+            {
+                Int16 value = Convert.ToInt16(rvalue);
+                pt.SetValue(obj, value, null);
+
+                return;
+            }
+            if (pt.PropertyType == typeof(Int32))
+            {
+                Int32 value = Convert.ToInt32(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(Int64))
+            {
+                Int64 value = Convert.ToInt64(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(UInt16))
+            {
+                UInt16 value = Convert.ToUInt16(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(UInt32))
+            {
+                UInt32 value = Convert.ToUInt32(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(UInt64))
+            {
+                UInt64 value = Convert.ToUInt64(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(float))
+            {
+                float value = Convert.ToSingle(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(double))
+            {
+                double value = Convert.ToDouble(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(decimal))
+            {
+                decimal value = Convert.ToDecimal(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(DateTime))
+            {
+                DateTime value = Convert.ToDateTime(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(Enum))
+            {
+                Int32 value = Convert.ToInt32(rvalue);
+                pt.SetValue(obj, value, null);
+                return;
+            }
+            if (pt.PropertyType == typeof(string))
+            {
+                string value = Convert.ToString(rvalue);
+                pt.SetValue(obj, rvalue, null);
+                return;
+            }
+            pt.SetValue(obj, null, null);
+        }
+
+        public static int Compare(int oldvalue, int newvalue)
+        {
+            if (oldvalue > newvalue)
+            {
+                return 1;
+            }
+            else if (oldvalue < newvalue)
+            {
+                return -1;
+            }
+            return 0;
+        }
+
+        public static int Compare(uint oldvalue, uint newvalue)
+        {
+            if (oldvalue > newvalue)
+            {
+                return 1;
+            }
+            else if (oldvalue < newvalue)
+            {
+                return -1;
+            }
+            return 0;
+        }
+
+        public static int Compare(short oldvalue, short newvalue)
+        {
+            if (oldvalue > newvalue)
+            {
+                return 1;
+            }
+            else if (oldvalue < newvalue)
+            {
+                return -1;
+            }
+            return 0;
+        }
+
+        public static int Compare(ushort oldvalue, ushort newvalue)
+        {
+            if (oldvalue > newvalue)
+            {
+                return 1;
+            }
+            else if (oldvalue < newvalue)
+            {
+                return -1;
+            }
+            return 0;
+        }
+
+        public static int Compare(long oldvalue, long newvalue)
+        {
+            if (oldvalue > newvalue)
+            {
+                return 1;
+            }
+            else if (oldvalue < newvalue)
+            {
+                return -1;
+            }
+            return 0;
+        }
+
+        public static int Compare(ulong oldvalue, ulong newvalue)
+        {
+            if (oldvalue > newvalue)
+            {
+                return 1;
+            }
+            else if (oldvalue < newvalue)
+            {
+                return -1;
+            }
+            return 0;
+        }
+
+        public static int Compare(byte oldvalue, byte newvalue)
+        {
+            if (oldvalue > newvalue)
+            {
+                return 1;
+            }
+            else if (oldvalue < newvalue)
+            {
+                return -1;
+            }
+            return 0;
+        }
+
+        public static int Compare(sbyte oldvalue, sbyte newvalue)
+        {
+            if (oldvalue > newvalue)
+            {
+                return 1;
+            }
+            else if (oldvalue < newvalue)
+            {
+                return -1;
+            }
+            return 0;
+        }
+
+        public static int Compare(decimal oldvalue, decimal newvalue)
+        {
+            if (oldvalue > newvalue)
+            {
+                return 1;
+            }
+            else if (oldvalue < newvalue)
+            {
+                return -1;
+            }
+            return 0;
+        }
+
+        public static int Compare(float oldvalue, float newvalue)
+        {
+            if (oldvalue > newvalue)
+            {
+                return 1;
+            }
+            else if (oldvalue < newvalue)
+            {
+                return -1;
+            }
+            return 0;
+        }
+
+        public static int Compare(double oldvalue, double newvalue)
+        {
+            if (oldvalue > newvalue)
+            {
+                return 1;
+            }
+            else if (oldvalue < newvalue)
+            {
+                return -1;
+            }
+            return 0;
+        }
+
+        public static int Compare(DateTime oldvalue, DateTime newvalue)
+        {
+            if (oldvalue > newvalue)
+            {
+                return 1;
+            }
+            else if (oldvalue < newvalue)
+            {
+                return -1;
+            }
+            return 0;
+        }
+
+        public static int Compare(char oldvalue, char newvalue)
+        {
+            if (oldvalue > newvalue)
+            {
+                return 1;
+            }
+            else if (oldvalue < newvalue)
+            {
+                return -1;
+            }
+            return 0;
+        }
+
+        public static int Compare(string oldvalue, string newvalue)
+        { 
+            return string.Compare(oldvalue, newvalue);
+        }
+ 
+
+        public static bool IsNumberType(Type t)
+        {
+            if (t == typeof(Int16))
+            {
+                return true;
+            }
+            if (t == typeof(Int32))
+            {
+                return true;
+            }
+            if (t == typeof(Int64))
+            {
+                return true;
+            }
+            if (t == typeof(UInt16))
+            {
+                return true;
+            }
+            if (t == typeof(UInt32))
+            {
+                return true;
+            }
+            if (t == typeof(UInt64))
+            {
+                return true;
+            }
+            if (t == typeof(float))
+            {
+                return true;
+            }
+            if (t == typeof(double))
+            {
+                return true;
+            }
+            if (t == typeof(decimal))
+            {
+                return true;
+            }
+            if (t == typeof(byte))
+            {
+                return true;
+            }
+            if (t == typeof(sbyte))
+            {
+                return true;
+            }
+            return false;
+        }
+#if DEBUG2
+        private static int _index = 0;
+        public static int Index
+        {
+            get { return _index++; }
+        }
+        public static void WriteTrace(string type, object mes)
+        {
+            string str="时间【" + DateTime.Now.ToString("HH:mm:ss:fff") + "】"
+                + "序号【" + Server.Index + "】"
+                + "类型【" + type + "】"
+                + "内容【" + mes.ToString() + "】";
+            TraceShow(str);
+        }
+        public static void WriteTrace(string type, string mes)
+        {
+            string str = ("时间【" + DateTime.Now.ToString("HH:mm:ss:fff") + "】"
+                + "序号【" + Server.Index + "】"
+                + "类型【" + type + "】"
+                + "内容【" + mes + "】");
+
+            TraceShow(str);
+        }
+        public static void WriteTrace(string type, Exception ex)
+        {
+            string str = ("时间【" + DateTime.Now.ToString("HH:mm:ss:fff") + "】"
+                + "序号【" + Server.Index + "】"
+                + "类型【" + type + "】"
+                + "内容【Message=【" + ex.Message + "】StackTrace=【" + ex.StackTrace + "】" + "】");
+
+            TraceShow(str);
+        }
+        public static void WriteTrace(string type, byte[] buffer)
+        {
+            StringBuilder mes = new StringBuilder();
+            for (int i = 0; i < buffer.Length; i++)
+            {
+                mes.Append(i + "=[" + buffer[i] + "];");
+            }
+            string str = ("时间【" + DateTime.Now.ToString("HH:mm:ss:fff") + "】"
+                + "序号【" + Server.Index + "】"
+                + "类型【" + type + "】"
+                + "内容【" + mes + "】");
+
+            TraceShow(str);
+        }
+        public static void WriteTrace(string mes)
+        {
+            string str = ("时间【" + DateTime.Now.ToString("HH:mm:ss:fff") + "】"
+                + "序号【" + Server.Index + "】"
+                + "内容【" + mes + "】");
+            TraceShow(str);
+
+        }
+        private static void TraceShow(string str)
+        {
+            if (str.Contains("实例"))
+            {
+                System.Diagnostics.Debugger.Break();
+            }
+            System.Diagnostics.Debug.WriteLine(str);
+            Console.WriteLine(str);
+        }
+#endif
+    }
+}

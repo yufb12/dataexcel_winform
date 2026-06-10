@@ -51,14 +51,23 @@ namespace Feng.Forms.Controls.TreeView
                 NodeDoubleClick(this, node);
             }
         }
+        public virtual void OnNodeClick(DataTreeNode node)
+        {
+            if (NodeClick != null)
+            {
+                NodeClick(this, node);
+            }
+        }
         public event FocusedNodeChangedHandler FocusedNodeChanged;
         public event NodeDoubleClickHandler NodeDoubleClick;
+        public event NodeClickHandler NodeClick;
 
     }
     public delegate void FocusedNodeChangedHandler(object sender, DataTreeNode node);
     public delegate void BeforeNodeExpandHandler(object sender, BaseTreeViewNodeCancelArgs e);
     public delegate void NodeExpandHandler(object sender,DataTreeNode node);
     public delegate void NodeDoubleClickHandler(object sender, DataTreeNode node);
+    public delegate void NodeClickHandler(object sender, DataTreeNode node);
     public class BaseTreeViewNodeCancelArgs : CancelEventArgs
     {
         public DataTreeNode Node { get; set; }

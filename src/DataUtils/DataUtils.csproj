@@ -273,6 +273,7 @@
     <Compile Include="Script\Function\CBMethod.cs" />
     <Compile Include="Script\Function\CBMethodContainer.cs" />
     <Compile Include="Script\Function\FunctionExtion\ArraruFunctionContainer.cs" />
+    <Compile Include="Script\Function\FunctionExtion\HttpToolMethodContainer.cs" />
     <Compile Include="Script\Function\FunctionExtion\DebugMethodContainer.cs" />
     <Compile Include="Script\Function\FunctionExtion\NotificationMethodContainer.cs" />
     <Compile Include="Script\Function\FunctionExtion\ConsoleFunctionContainer.cs" />
@@ -290,7 +291,7 @@
       <DependentUpon>FrmTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Script\Function\FunctionExtion\JsonFunctionContainer.cs" />
-    <Compile Include="Script\Function\FunctionExtion\ListFunctionContainer.cs" />
+    <Compile Include="Script\Function\FunctionExtion\CollectionFunctionContainer.cs" />
     <Compile Include="Script\Function\FunctionExtion\LogicalFunctionContainer.cs" />
     <Compile Include="Script\Function\FunctionExtion\MathematicsFunctionContainer.cs" />
     <Compile Include="Script\Function\FunctionExtion\ReflectionContainer.cs" />
@@ -1412,10 +1413,13 @@
     <None Include="Resources\arrow_state_blue_finish.png" />
     <None Include="Resources\net_connected.png" />
     <Content Include="Script\Json\JsonRule.txt" />
+    <Content Include="ZFile\SQL编码规范.txt" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Content Include="ZFile\系统.txt" />
+    <Content Include="ZFile\编码规范.txt" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

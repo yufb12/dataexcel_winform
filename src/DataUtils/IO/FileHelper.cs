@@ -302,6 +302,12 @@ namespace Feng.IO
         }
  
         public static object WriteFileByThreadEvents = new object();
+
+        public static void ReName(string sourceFileName, string targetfile)
+        {
+            System.IO.File.Move(sourceFileName, targetfile);
+        }
+
         //public class FileCacheWrite
         //{
         //    public string File { get; set; }
@@ -324,7 +330,7 @@ namespace Feng.IO
         //            Feng.Utils.ExceptionHelper.ShowError(ex);
         //        } 
         //    }
- 
+
         //    private DateTime lasttime = DateTime.Now;
         //    public void WriteToFile()
         //    {
@@ -346,7 +352,7 @@ namespace Feng.IO
         //            } 
         //        }
         //    }
-           
+
         //}
         public static void WriteFile(string file, Dictionary<long, byte[]> dics)
         {

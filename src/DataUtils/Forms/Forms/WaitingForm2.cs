@@ -93,15 +93,15 @@ namespace Feng.Forms
             // 
             // txtTitle
             // 
-            this.txtTitle.AutoSize = true;
             this.txtTitle.BackColor = System.Drawing.Color.Transparent;
             this.txtTitle.Font = new System.Drawing.Font("宋体", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtTitle.ForeColor = System.Drawing.Color.Gray;
-            this.txtTitle.Location = new System.Drawing.Point(58, 23);
+            this.txtTitle.Location = new System.Drawing.Point(58, 25);
             this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(119, 14);
+            this.txtTitle.Size = new System.Drawing.Size(442, 36);
             this.txtTitle.TabIndex = 1;
             this.txtTitle.Text = "正在加载，请稍候";
+            this.txtTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtTitle_MouseDown);
             // 
             // timer1
             // 
@@ -159,6 +159,7 @@ namespace Feng.Forms
             this.ShowIcon = false;
             this.Load += new System.EventHandler(this.WaitingForm2_Load);
             this.DoubleClick += new System.EventHandler(this.WaitingForm2_DoubleClick);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.WaitingForm2_MouseDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -354,6 +355,36 @@ namespace Feng.Forms
             catch (Exception ex)
             { 
                 Feng.Utils.TraceHelper.WriteTrace("DataDesign", "WaitingForm2", "btnCancel_LinkClicked", ex);
+            }
+        }
+
+        private void WaitingForm2_MouseDown(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                if (e.Button == MouseButtons.Left)
+                {
+                    Utils.UnsafeNativeMethods.ReleaseCapture();
+                    Utils.UnsafeNativeMethods.SendMessage(Handle, Utils.UnsafeNativeMethods.WM_NCLBUTTONDOWN, Utils.UnsafeNativeMethods.HT_CAPTION, 0);
+                }
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void txtTitle_MouseDown(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                if (e.Button == MouseButtons.Left)
+                {
+                    Utils.UnsafeNativeMethods.ReleaseCapture();
+                    Utils.UnsafeNativeMethods.SendMessage(Handle, Utils.UnsafeNativeMethods.WM_NCLBUTTONDOWN, Utils.UnsafeNativeMethods.HT_CAPTION, 0);
+                }
+            }
+            catch (Exception)
+            {
             }
         }
     }

@@ -9,13 +9,7 @@ namespace Feng.Forms
 {
     public partial class frmNotification : Form
     {
-        [DllImport("user32.dll")]
-        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
-        [DllImport("user32.dll")]
-        public static extern bool ReleaseCapture();
 
-        public const int WM_NCLBUTTONDOWN = 0xA1;
-        public const int HT_CAPTION = 0x2;
         public frmNotification()
         {
             InitializeComponent();
@@ -89,8 +83,8 @@ namespace Feng.Forms
             {
                 if (e.Button == MouseButtons.Left)
                 {
-                    ReleaseCapture();
-                    SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+                    Utils.UnsafeNativeMethods.ReleaseCapture();
+                    Utils.UnsafeNativeMethods.SendMessage(Handle, Utils.UnsafeNativeMethods.WM_NCLBUTTONDOWN, Utils.UnsafeNativeMethods.HT_CAPTION, 0);
                 }
             }
             catch (Exception)
@@ -148,8 +142,8 @@ namespace Feng.Forms
             {
                 if (e.Button == MouseButtons.Left)
                 {
-                    ReleaseCapture();
-                    SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+                    Utils.UnsafeNativeMethods.ReleaseCapture();
+                    Utils.UnsafeNativeMethods.SendMessage(Handle, Utils.UnsafeNativeMethods.WM_NCLBUTTONDOWN, Utils.UnsafeNativeMethods.HT_CAPTION, 0);
                 }
             }
             catch (Exception)
@@ -180,8 +174,8 @@ namespace Feng.Forms
                     this.timer1.Enabled = false;
                     this.timer2.Enabled = false;
                     Clipboard.SetText(this.txtMsg.Text);
-                    ReleaseCapture();
-                    SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+                    Utils.UnsafeNativeMethods.ReleaseCapture();
+                    Utils.UnsafeNativeMethods.SendMessage(Handle, Utils.UnsafeNativeMethods.WM_NCLBUTTONDOWN, Utils.UnsafeNativeMethods.HT_CAPTION, 0);
                 }
             }
             catch (Exception)
@@ -404,6 +398,84 @@ namespace Feng.Forms
                     break;
             }
             return frm;
+        }
+
+        private frmNotification UpdateForm = null;
+        public void UpdateInfo(string title, string msg)
+        {
+            NotificationType type = NotificationType.INFO;
+            frmNotification frm = UpdateForm;
+            if (frm == null)
+            {
+                UpdateForm = Create(type, title, msg);
+                frm = UpdateForm;
+                Point point = GetPoint(frm);
+                frm.timer1.Enabled = false;
+                frm.WindowState = FormWindowState.Normal;
+                frm.StartPosition = FormStartPosition.Manual;
+                frm.Left = point.X;
+                frm.Top = point.Y;
+                frm.TopMost = true;
+            }
+            if (frm.IsDisposed)
+            {
+                UpdateForm = Create(type, title, msg);
+                frm = UpdateForm;
+                Point point = GetPoint(frm);
+                frm.timer1.Enabled = false;
+                frm.WindowState = FormWindowState.Normal;
+                frm.StartPosition = FormStartPosition.Manual;
+                frm.Left = point.X;
+                frm.Top = point.Y;
+                frm.TopMost = true;
+            }
+
+            frm.txtMsg.Text = msg;
+            frm.txtTitle.Text = msg;
+            //frm.Opacity = 1;
+            switch (type)
+            {
+                case NotificationType.SUCCESS:
+                    frm.picMsgType.Image = global::Feng.Utils.Properties.Resources.Notification_success;
+                    break;
+                case NotificationType.ERROR:
+                    frm.picMsgType.Image = global::Feng.Utils.Properties.Resources.Notification_error;
+                    frm.timer1.Interval = 1000 * 15;
+                    frm.timer2.Enabled = false;
+                    break;
+                case NotificationType.WARN:
+                    frm.picMsgType.Image = global::Feng.Utils.Properties.Resources.Notification_warn;
+                    frm.timer1.Interval = 1000 * 10;
+                    frm.timer2.Interval = 300;
+                    break;
+                case NotificationType.INFO:
+                    frm.picMsgType.Image = global::Feng.Utils.Properties.Resources.Notification_info;
+                    break;
+                default:
+                    break;
+            }
+            this.Forms.Add(frm);
+            frm.Show();
+        }
+        public void EndUpdateInfo()
+        {
+            try
+            {
+                frmNotification frm = UpdateForm;
+                if (frm == null)
+                {
+                    return;
+                }
+                if (frm.IsDisposed)
+                {
+                    return;
+                }
+                frm.timer1.Enabled = true;
+            }
+            catch (Exception )
+            { 
+            }
+
         }
     }
 }

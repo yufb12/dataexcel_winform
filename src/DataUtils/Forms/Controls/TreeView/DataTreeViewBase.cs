@@ -470,6 +470,24 @@ namespace Feng.Forms.Controls.TreeView
             this.OnFocusedNodeChanged(null);
             return false;
         }
+        public override bool OnMouseClick(object sender, MouseEventArgs e, EventViewArgs ve)
+        {
+            GridViewCell cell = this.FocusedCell;
+            if (cell == null)
+                return false;
+            if (cell.Row != null)
+            {
+                DataTreeRow treerow = cell.Row as DataTreeRow;
+                if (treerow != null)
+                {
+                    if (treerow.Node != null)
+                    {   
+                        this.OnNodeClick(treerow.Node);
+                    }
+                }
+            }
+            return base.OnMouseClick(sender, e, ve);
+        }
         public override void OnFocusedCellChanged(GridViewCell cell)
         {
             if (cell.Row != null)

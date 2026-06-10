@@ -675,5 +675,37 @@ namespace Feng.Script.CBEexpress
             }
         }
 
+        private bool isSignNegative(Token token)
+        {
+            if (token == null)
+                return true;
+            switch (token.Type)
+            {
+                case TokenType.Key_RETURN:
+                case TokenType.Key_WHILE:
+                case TokenType.Key_FOR:
+                case TokenType.Key_IF:
+                case TokenType.SignLeftParenthesis:
+                case TokenType.SignMultiplied:
+                case TokenType.SignDivided:
+                case TokenType.SignModulus:
+                case TokenType.SignEuality:
+                case TokenType.SignComma:
+                case TokenType.SignLeftBRACE:
+                case TokenType.SignSemicolon:
+                case TokenType.SignLeftSquareBrackets:
+                case TokenType.SignEqualTo:
+                case TokenType.SignNotEqualTo:
+                case TokenType.SignRelationalGreaterThan:
+                case TokenType.SignRelationalGreaterThanOrEqual:
+                case TokenType.SignRelationalLessThan:
+                case TokenType.SignRelationalLessThanOrEqual:
+                    return true;
+                default:
+                    break;
+            }
+            return false;
+        }
+
     }
 }

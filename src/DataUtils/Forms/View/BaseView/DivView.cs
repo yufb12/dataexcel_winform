@@ -167,6 +167,8 @@ namespace Feng.Forms.Views
         {
             try
             {
+                if (OnBeforEventDo("OnWndProc", sender, m, ve))
+                    return true;
                 foreach (DivView item in DecorateViewes)
                 {
                     bool res = item.OnWndProc(sender, ref m, ve);
@@ -196,6 +198,8 @@ namespace Feng.Forms.Views
         {
             try
             {
+                if (OnBeforEventDo("OnMouseCaptureChanged", sender, e, ve))
+                    return true;
                 foreach (DivView item in DecorateViewes)
                 {
                     bool res = item.OnMouseCaptureChanged(sender, e, ve);
@@ -224,6 +228,8 @@ namespace Feng.Forms.Views
         {
             try
             {
+                if (OnBeforEventDo("OnMouseClick", sender, e, ve))
+                    return true;
                 int x = ve.X;
                 int y = ve.Y;
                 foreach (DivView item in this.DecorateViewes)
@@ -258,6 +264,8 @@ namespace Feng.Forms.Views
         {
             try
             {
+                if (OnBeforEventDo("OnMouseDoubleClick", sender, e, ve))
+                    return true;
                 int x = ve.X;
                 int y = ve.Y;
                 foreach (DivView item in this.DecorateViewes)
@@ -292,6 +300,8 @@ namespace Feng.Forms.Views
         {
             try
             {
+                if (OnBeforEventDo("OnMouseDown", sender, e, ve))
+                    return true;
                 int x = ve.X;
                 int y = ve.Y;
                 foreach (DivView item in this.DecorateViewes)
@@ -326,6 +336,8 @@ namespace Feng.Forms.Views
         {
             try
             {
+                if (OnBeforEventDo("OnMouseMove", sender, e, ve))
+                    return true;
                 int x = ve.X;
                 int y = ve.Y;
                 foreach (DivView item in DecorateViewes)
@@ -361,6 +373,8 @@ namespace Feng.Forms.Views
         {
             try
             {
+                if (OnBeforEventDo("OnMouseUp", sender, e, ve))
+                    return true;
                 int x = ve.X;
                 int y = ve.Y;
                 foreach (DivView item in DecorateViewes)
@@ -395,6 +409,8 @@ namespace Feng.Forms.Views
         {
             try
             {
+                if (OnBeforEventDo("OnMouseEnter", sender, e, ve))
+                    return true;
                 int x = ve.X;
                 int y = ve.Y;
                 foreach (DivView item in DecorateViewes)
@@ -429,6 +445,8 @@ namespace Feng.Forms.Views
         {
             try
             {
+                if (OnBeforEventDo("OnMouseHover", sender, e, ve))
+                    return true;
                 int x = ve.X;
                 int y = ve.Y;
                 foreach (DivView item in DecorateViewes)
@@ -463,6 +481,8 @@ namespace Feng.Forms.Views
         {
             try
             {
+                if (OnBeforEventDo("OnMouseLeave", sender, e, ve))
+                    return true;
                 int x = ve.X;
                 int y = ve.Y;
                 foreach (DivView item in DecorateViewes)
@@ -497,6 +517,8 @@ namespace Feng.Forms.Views
         {
             try
             {
+                if (OnBeforEventDo("OnMouseWheel", sender, e, ve))
+                    return true;
                 foreach (DivView item in DecorateViewes)
                 {
                     bool res = item.OnMouseWheel(sender, e, ve);
@@ -525,6 +547,8 @@ namespace Feng.Forms.Views
         {
             try
             {
+                if (OnBeforEventDo("OnKeyDown", sender, e, ve))
+                    return true;
                 foreach (DivView item in DecorateViewes)
                 {
                     bool res = item.OnKeyDown(sender, e, ve);
@@ -553,6 +577,8 @@ namespace Feng.Forms.Views
         {
             try
             {
+                if (OnBeforEventDo("OnKeyPress", sender, e, ve))
+                    return true;
                 foreach (DivView item in DecorateViewes)
                 {
                     bool res = item.OnKeyPress(sender, e, ve);
@@ -581,6 +607,8 @@ namespace Feng.Forms.Views
         {
             try
             {
+                if (OnBeforEventDo("OnKeyUp", sender, e, ve))
+                    return true;
                 foreach (DivView item in DecorateViewes)
                 {
                     bool res = item.OnKeyUp(sender, e, ve);
@@ -609,6 +637,8 @@ namespace Feng.Forms.Views
         {
             try
             {
+                if (OnBeforEventDo("OnClick", sender, e, ve))
+                    return true;
                 foreach (DivView item in DecorateViewes)
                 {
                     bool res = item.OnClick(sender, e, ve);
@@ -637,6 +667,8 @@ namespace Feng.Forms.Views
         {
             try
             {
+                if (OnBeforEventDo("OnPreviewKeyDown", sender, e, ve))
+                    return true;
                 foreach (DivView item in DecorateViewes)
                 {
                     bool res = item.OnPreviewKeyDown(sender, e, ve);
@@ -666,6 +698,8 @@ namespace Feng.Forms.Views
         {
             try
             {
+                if (OnBeforEventDo("OnDoubleClick", sender, e, ve))
+                    return true;
                 foreach (DivView item in DecorateViewes)
                 {
                     bool res = item.OnDoubleClick(sender, e, ve);
@@ -695,6 +729,8 @@ namespace Feng.Forms.Views
         {
             try
             {
+                if (OnBeforEventDo("OnPreProcessMessage", sender, msg, ve))
+                    return true;
                 foreach (DivView item in DecorateViewes)
                 {
                     bool res = item.OnPreProcessMessage(sender, ref msg, ve);
@@ -724,6 +760,8 @@ namespace Feng.Forms.Views
         {
             try
             {
+                if (OnBeforEventDo("OnProcessCmdKey", sender, e, ve))
+                    return true;
                 foreach (DivView item in DecorateViewes)
                 {
                     bool res = item.OnProcessCmdKey(sender, ref msg, e, ve);
@@ -753,6 +791,8 @@ namespace Feng.Forms.Views
         {
             try
             {
+                if (OnBeforEventDo("OnProcessDialogChar", sender, e, ve))
+                    return true;
                 foreach (DivView item in DecorateViewes)
                 {
                     bool res = item.OnProcessDialogChar(sender, e, ve);
@@ -782,6 +822,8 @@ namespace Feng.Forms.Views
         {
             try
             {
+                if (OnBeforEventDo("OnProcessDialogKey", sender, e, ve))
+                    return true;
                 foreach (DivView item in DecorateViewes)
                 {
                     bool res = item.OnProcessDialogKey(sender, e, ve);
@@ -811,6 +853,8 @@ namespace Feng.Forms.Views
         {
             try
             {
+                if (OnBeforEventDo("OnProcessKeyEventArgs", sender, msg, ve))
+                    return true;
                 foreach (DivView item in DecorateViewes)
                 {
                     bool res = item.OnProcessKeyEventArgs(sender, ref msg, ve);
@@ -840,6 +884,8 @@ namespace Feng.Forms.Views
         {
             try
             {
+                if (OnBeforEventDo("OnProcessKeyMessage", sender, msg, ve))
+                    return true;
                 foreach (DivView item in DecorateViewes)
                 {
                     bool res = item.OnProcessKeyMessage(sender, ref msg, ve);
@@ -869,6 +915,8 @@ namespace Feng.Forms.Views
         {
             try
             {
+                if (OnBeforEventDo("OnProcessKeyPreview", sender, msg, ve))
+                    return true;
                 foreach (DivView item in DecorateViewes)
                 {
                     bool res = item.OnProcessKeyPreview(sender, ref msg, ve);
@@ -898,7 +946,8 @@ namespace Feng.Forms.Views
         {
             try
             {
-
+                if (OnBeforEventDo("OnDragEnter", sender, e, ve))
+                    return true;
                 foreach (DivView item in DecorateViewes)
                 {
                     bool res = item.OnDragEnter(sender, e, ve);
@@ -927,7 +976,8 @@ namespace Feng.Forms.Views
         {
             try
             {
-
+                if (OnBeforEventDo("OnDragDrop", sender, e, ve))
+                    return true;
                 foreach (DivView item in DecorateViewes)
                 {
                     bool res = item.OnSizeChanged(sender, e, ve);
@@ -956,7 +1006,8 @@ namespace Feng.Forms.Views
         {
             try
             {
-
+                if (OnBeforEventDo("OnDragLeave", sender, e, ve))
+                    return true;
                 foreach (DivView item in DecorateViewes)
                 {
                     bool res = item.OnSizeChanged(sender, e, ve);
@@ -985,7 +1036,8 @@ namespace Feng.Forms.Views
         {
             try
             {
-
+                if (OnBeforEventDo("OnHandleCreated", sender, e, ve))
+                    return true;
                 foreach (DivView item in DecorateViewes)
                 {
                     bool res = item.OnSizeChanged(sender, e, ve);
@@ -1010,24 +1062,20 @@ namespace Feng.Forms.Views
             }
             return base.OnHandleCreated(sender, e, ve);
         }
-
         public override bool OnSizeChanged(object sender, EventArgs e, EventViewArgs ve)
         {
+            if (OnBeforEventDo("OnSizeChanged", sender, e, ve))
+                return true;
             ReSize(sender, e, null, this, ve);
             ReLayout(sender, e, null, this, ve);
             return false;
-        }
-        public virtual void ReSetSize()
-        {
-            EventViewArgs ve = EventViewArgs.GetEventViewArgs(this.Control);
-            EventArgs e = new EventArgs();
-            ReSize(this, e, null, this, ve);
-            ReLayout(this, e, null, this, ve);
         }
         public override bool OnDraw(object sender, Feng.Drawing.GraphicsObject g)
         {
             try
             {
+                if (OnBeforEventDo("OnDraw", sender, g))
+                    return true;
                 foreach (DivView item in DecorateViewes)
                 {
                     bool res = item.OnDraw(sender, g);
@@ -1056,6 +1104,8 @@ namespace Feng.Forms.Views
         {
             try
             {
+                if (OnBeforEventDo("OnDrawBack", sender, g))
+                    return true;
                 foreach (DivView item in DecorateViewes)
                 {
                     bool res = item.OnDrawBack(sender, g);
@@ -1084,7 +1134,8 @@ namespace Feng.Forms.Views
         {
             try
             {
-
+                if (OnBeforEventDo("OnRefresh", sender, e, ve))
+                    return true;
                 foreach (DivView item in DecorateViewes)
                 {
                     bool res = item.OnRefresh(sender, e, ve);
@@ -1113,7 +1164,8 @@ namespace Feng.Forms.Views
         {
             try
             {
-
+                if (OnBeforEventDo("OnSetTextView", sender, e, ve))
+                    return true;
                 foreach (DivView item in DecorateViewes)
                 {
                     bool res = item.OnSetTextView(sender, isfont, font, isforecolor, color, isbackcolor, backcolor, e, ve);
@@ -1144,7 +1196,8 @@ namespace Feng.Forms.Views
         {
             try
             {
-
+                if (OnBeforEventDo("OnSetObj", sender, e, ve))
+                    return true;
                 foreach (DivView item in DecorateViewes)
                 {
                     bool res = item.OnSetObj(sender, obj, e, ve);
@@ -1169,12 +1222,10 @@ namespace Feng.Forms.Views
             }
             return base.OnSetObj(sender, obj, e, ve);
         }
-        public virtual void Sort()
-        {
-            this.Viewes.Sort();
-        }
         public override bool SendMessage(BaseView view, object sender, ViewMessage message)
         {
+            if (OnBeforEventDo("SendMessage", sender, message))
+                return true;
             for (int i = this.Viewes.Count - 1; i >= 0; i--)
             {
                 try
@@ -1192,6 +1243,29 @@ namespace Feng.Forms.Views
                 }
             }
             return false;
+        }
+
+        public virtual bool OnBeforEventDo(string type, params object[] args)
+        {
+            return false;
+        }
+
+        public virtual bool OnAfterEventDo(params object[] args)
+        {
+            return false;
+        }
+
+        public virtual void ReSetSize()
+        {
+            EventViewArgs ve = EventViewArgs.GetEventViewArgs(this.Control);
+            EventArgs e = new EventArgs();
+            ReSize(this, e, null, this, ve);
+            ReLayout(this, e, null, this, ve);
+        }
+
+        public virtual void Sort()
+        {
+            this.Viewes.Sort();
         }
 
         public virtual bool ReLayout(object sender, EventArgs e, BaseView pView, BaseView parentView, EventViewArgs ve)

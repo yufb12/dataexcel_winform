@@ -48,7 +48,7 @@ namespace Feng.Script.CBEexpress
             NetParser netParser = new NetParser();
             netParser.File = file; 
             netParser.AddFunction(new Feng.Script.FunctionContainer.DateTimeFunctionContainer());
-            netParser.AddFunction(new Feng.Script.FunctionContainer.ListFunctionContainer());
+            netParser.AddFunction(new Feng.Script.FunctionContainer.CollectionFunctionContainer());
             netParser.Entity = null; //server instance
             obj = netParser.ExecEvent(script, function, args);
             return obj;

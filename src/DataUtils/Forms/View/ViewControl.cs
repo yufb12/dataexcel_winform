@@ -917,6 +917,7 @@ namespace Feng.Forms.Views
                 currentGraphicsObject.Control = this;
                 currentGraphicsObject.ClientPoint = this.PointToClient(currentGraphicsObject.MousePoint);
                 currentGraphicsObject.ClipRectangle = this.Bounds;
+                currentGraphicsObject.Graphics.SmoothingMode = SmoothingMode.HighQuality;
                 Graphics g = e.Graphics;
                 GraphicsState gs = g.Save();
                 g.PageUnit = GraphicsUnit.Pixel;

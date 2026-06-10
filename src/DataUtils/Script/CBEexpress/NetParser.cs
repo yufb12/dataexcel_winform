@@ -31,6 +31,7 @@ namespace Feng.Script.CBEexpress
         bool HasFunction(string value);
         object RunFunction(string value, List<object> args, NetVarCollection varStack, ICBContext methodProxy);
         object RunRpcFunction(string url, string function, List<object> args);
+        object Value { get; set; }
     }
 
     public class CBContext : ICBContext, INetParserInit
@@ -45,6 +46,7 @@ namespace Feng.Script.CBEexpress
         public virtual string File { get; set; }
         public virtual NetDebug Debug { get; set; }
         public virtual string FunctionName { get; set; }
+        public virtual object Value { get;set; }
 
         Feng.Collections.DictionaryEx<string, NetStatementFunction> dics = null;
         public virtual void AddFunction(string functionname, NetStatementFunction netStatementFunction)
@@ -529,6 +531,7 @@ namespace Feng.Script.CBEexpress
             varStack.Add(rootvarlist);
         }
         public string File { get; set; }
+        public string Script { get; set; }
         public object Entity { get; set; }
         public NetDebug debug { get; set; }
         NetVarCollection varStack = new NetVarCollection();
@@ -551,19 +554,23 @@ namespace Feng.Script.CBEexpress
             }
             return result;
         }
-        public void Debug(string txt)
+        public void InitDebugScript(string txt)
         {
             debug = new NetDebug();
             debug.SetCommand(DebugCommand.Pause);
+            Script = txt;
+        }
+        public void Debug()
+        { 
             System.Threading.Thread thread = new System.Threading.Thread(Run);
             thread.IsBackground = true;
-            thread.Start(txt);
+            thread.Start();
         }
         private void Run(object obj)
         {
             try
             {
-                object value = Exec(obj.ToString());
+                object value = Exec(Script);
             }
             catch (Exception ex)
             {
@@ -572,12 +579,17 @@ namespace Feng.Script.CBEexpress
         }
         public object Exec(string txt)
         {
+            Script = txt;
             string express = txt;
             object result = null;
             try
             {
                 TokenPool tokenPool = GetTokenPool(express);
                 result = Exec(tokenPool);
+                if (cbcontext.Debug != null)
+                {
+                    cbcontext.Debug.DebugFinish();
+                }
             }
             catch (SyntacticException ex)
             {
@@ -608,7 +620,7 @@ namespace Feng.Script.CBEexpress
                 cbcontext.File = this.File;
                 cbcontext.Debug = this.debug;
                 statementVar.Exec(varStack, netInterrupt, cbcontext);
-                result = varStack.GetVarValue("netresult", null);
+                result = cbcontext.Value;
             }
             catch (SyntacticException ex)
             {
@@ -618,8 +630,13 @@ namespace Feng.Script.CBEexpress
             }
             return result;
         }
-
-
+        private void CheckDebug(ICBContext methodProxy, NetStatementBase statement)
+        {
+            if (methodProxy.Debug != null)
+            {
+                methodProxy.Debug.CheckBreakpoint(statement);
+            }
+        }
         private object Exec(TokenPool tokenPool)
         {
             List<NetStatementBase> list = NetStatementBuilder.GetNetStatements(tokenPool);
@@ -641,6 +658,7 @@ namespace Feng.Script.CBEexpress
                 NetStatementBase netStatement = list[i];
                 try
                 {
+                    CheckDebug(cbcontext, netStatement);
                     netStatement.Exec(varStack, netInterrupt, cbcontext);
                     if (netInterrupt.Return)
                     {
@@ -653,11 +671,7 @@ namespace Feng.Script.CBEexpress
                 }
             }
 
-            object result = null;
-            if (varStack.HasVarValue("netresult"))
-            {
-                result = varStack.GetVarValue("netresult", null);
-            }
+            object result = cbcontext.Value; 
             return result;
         }
         public object ExecEvent(string script, string eventname, List<object> args)
@@ -697,10 +711,7 @@ namespace Feng.Script.CBEexpress
                 {
                     throw new Exception("未找到函数:" + eventname);
                 }
-                if (varStack.HasVarValue("netresult"))
-                {
-                    result = varStack.GetVarValue("netresult", null);
-                }
+                result = cbcontext.Value;
             }
             catch (SyntacticException ex)
             {
@@ -716,8 +727,7 @@ namespace Feng.Script.CBEexpress
             lexer.Parse();
             return lexer.TokenPool;
         }
-
-
+ 
         private object Check(TokenPool tokenPool)
         {
             object value = null;
@@ -734,6 +744,7 @@ namespace Feng.Script.CBEexpress
         {
             this.rootvarlist.SetValue(name,value);
         }
+
         public static string GetLine(string txt, int index)
         {
             try
@@ -765,6 +776,7 @@ namespace Feng.Script.CBEexpress
             }
 
         }
+
         public void Inited()
         {
             INetParserInit netParserInit = cbcontext as INetParserInit;

@@ -46,7 +46,13 @@ namespace Feng.Script.FunctionContainer
             model.Eg = @"DebugFunctionName("")";
             model.Function = this.DebugFunctionName;
             MethodList.Add(model);
-
+             
+            model = new BaseMethod();
+            model.Name = "DebugResult";
+            model.Description = @"DebugResult()";
+            model.Eg = @"DebugResult("")";
+            model.Function = this.DebugResult;
+            MethodList.Add(model);
         }
 
         public virtual object DebugBreak(params object[] args)
@@ -86,6 +92,13 @@ namespace Feng.Script.FunctionContainer
                 return cbcontext.FunctionName;
             }
             return string.Empty;
+        }
+ 
+        public virtual object DebugResult(params object[] args)
+        {
+            ICBContext cbcontext = args[0] as ICBContext;
+            cbcontext.Value = args[1];
+            return base.TRUE;
         }
     }
 

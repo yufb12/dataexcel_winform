@@ -4059,6 +4059,7 @@ namespace Feng.Utils
             {
                 return d;
             }
+            return 0;
             return Convert.ToDouble(obj);
         }
 

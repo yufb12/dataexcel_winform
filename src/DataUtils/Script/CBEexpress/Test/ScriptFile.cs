@@ -236,7 +236,19 @@ namespace Feng.Script.CBEexpress
         {
             DebugExceptionEvent?.Invoke(this, ex);
         }
-        private void OnDebugEvent(DebugEventType eventType)
+        public void DebugFinish()
+        {
+            DebugEvent?.Invoke(this, new DebugEventArgs
+            {
+                EventType =  DebugEventType.Finish,
+                CurrentStatement = null,
+                CurrentToken = CurrentToken,
+                DebugState = currentState,
+                NestingLevel = NestingLevel,
+                Value = "Finished"
+            });
+        }
+        public void OnDebugEvent(DebugEventType eventType)
         {
             DebugEvent?.Invoke(this, new DebugEventArgs
             {
@@ -303,7 +315,8 @@ namespace Feng.Script.CBEexpress
         LogValue,
         ContextChanged,
         BreakpointHit,
-        Resumed
+        Resumed,
+        Finish
     }
      
     public class DebugEventArgs : EventArgs

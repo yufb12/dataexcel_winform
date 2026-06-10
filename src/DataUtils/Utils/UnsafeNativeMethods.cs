@@ -125,9 +125,9 @@ namespace Feng.Utils
         public static extern bool AllocConsole();
 
         [DllImport("User32.DLL")]
-        private static extern int SendMessage(IntPtr hWnd, uint Msg, int wParam, int lParam);
+        public static extern int SendMessage(IntPtr hWnd, uint Msg, int wParam, int lParam);
         [DllImport("User32.DLL")]
-        private static extern bool ReleaseCapture();
+        public static extern bool ReleaseCapture();
         private const uint WM_SYSCOMMAND = 0x0112;
         private const int WM_SETREDRAW = 11;
         private const int SC_MOVE = 61456;
@@ -573,6 +573,11 @@ namespace Feng.Utils
         public static extern int EnumChildWindows(int hWndParent, CallBack lpfn, int lParam);
         public delegate bool CallBack(int hwnd, int lParam);
 
+
+ 
+
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
         /// <summary>
         /// 参数 意义 
         ///dwFlags Long，下表中标志之一或它们的组合 

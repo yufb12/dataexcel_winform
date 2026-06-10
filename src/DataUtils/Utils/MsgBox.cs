@@ -51,6 +51,23 @@ namespace Feng.Utils
 
         }
 
+        public static System.Windows.Forms.DialogResult ShowQuestionYesOrNo(string text)
+        {
+            try
+            {
+                System.Windows.Forms.DialogResult drl = System.Windows.Forms.MessageBox.Show(text,
+                    Feng.App.Systeminfo.ApplicationName,
+                    System.Windows.Forms.MessageBoxButtons.YesNo,
+                    System.Windows.Forms.MessageBoxIcon.Question);
+                return drl;
+            }
+            catch (Exception ex)
+            {
+                Feng.Utils.ExceptionHelper.ShowError(ex);
+                return System.Windows.Forms.DialogResult.Abort;
+            }
+
+        }
         public static System.Windows.Forms.DialogResult ShowOk(string text)
         {
             try

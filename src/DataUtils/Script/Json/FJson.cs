@@ -349,6 +349,18 @@ namespace Feng.Json
         {
             get
             {
+                foreach (var item in Jsones)
+                {
+                    string value = Feng.Utils.ConvertHelper.ToString(item.Value);
+                    if (value == key)
+                    {
+                        return item;
+                    }
+                    if (item.Value.Equals(key))
+                    {
+                        return item;
+                    }
+                }
                 return null;
             }
             set { }
