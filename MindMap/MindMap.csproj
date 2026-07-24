@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MindMap</RootNamespace>
+    <AssemblyName>MindMap</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.VisualBasic" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\Enums.cs" />
+    <Compile Include="Core\Parts\MindMapNode.Core.cs" />
+    <Compile Include="Core\Parts\MindMapNode.Tree.cs" />
+    <Compile Include="Core\Parts\MindMapNode.Expand.cs" />
+    <Compile Include="Core\Parts\MindMapNode.Events.cs" />
+    <Compile Include="Core\Parts\NodeStyle.Data.cs" />
+    <Compile Include="Core\Parts\NodeStyle.Factory.cs" />
+    <Compile Include="Core\Parts\NodeStyle.Builder.cs" />
+    <Compile Include="Core\Managers\SelectionManager.cs" />
+    <Compile Include="Core\EventArgs.cs" />
+    <Compile Include="Core\MindMapDocument.cs" />
+    <Compile Include="Core\Connection.cs" />
+    <Compile Include="Core\ViewSettings.cs" />
+    <Compile Include="Core\Theme.cs" />
+    <Compile Include="Interfaces\ICommand.cs" />
+    <Compile Include="Interfaces\IFileService.cs" />
+    <Compile Include="Interfaces\IHitTester.cs" />
+    <Compile Include="Interfaces\ILayoutEngine.cs" />
+    <Compile Include="Interfaces\INodeRenderer.cs" />
+    <Compile Include="Commands\AddNodeCommand.cs" />
+    <Compile Include="Commands\CommandManager.cs" />
+    <Compile Include="Commands\DeleteNodeCommand.cs" />
+    <Compile Include="Commands\InsertNodeCommand.cs" />
+    <Compile Include="Commands\EditNodeTextCommand.cs" />
+    <Compile Include="Commands\MoveNodeCommand.cs" />
+    <Compile Include="Layout\LayoutEngineBase.cs" />
+    <Compile Include="Layout\LayoutUtils.cs" />
+    <Compile Include="Layout\RadialLayoutEngine.cs" />
+    <Compile Include="Layout\TreeLayoutEngine.cs" />
+    <Compile Include="Layout\LeftRightLayoutEngine.cs" />
+    <Compile Include="Layout\FishboneLayoutEngine.cs" />
+    <Compile Include="Layout\TimelineLayoutEngine.cs" />
+    <Compile Include="Layout\OrgChartLayoutEngine.cs" />
+    <Compile Include="Layout\MindMapHorizontalLayout.cs" />
+    <Compile Include="Layout\MindMapVerticalLayout.cs" />
+    <Compile Include="Layout\SpiralLayoutEngine.cs" />
+    <Compile Include="Layout\FanLayoutEngine.cs" />
+    <Compile Include="Layout\CircleLayoutEngine.cs" />
+    <Compile Include="Layout\WaterfallLayoutEngine.cs" />
+    <Compile Include="Layout\SymmetricLayoutEngine.cs" />
+    <Compile Include="Layout\PyramidLayoutEngine.cs" />
+    <Compile Include="Layout\FunnelLayoutEngine.cs" />
+    <Compile Include="Layout\BubbleLayoutEngine.cs" />
+    <Compile Include="Layout\MatrixLayoutEngine.cs" />
+    <Compile Include="Layout\FlowchartLayoutEngine.cs" />
+    <Compile Include="Layout\RingLayoutEngine.cs" />
+    <Compile Include="Layout\LayoutConstants.cs" />
+    <Compile Include="Layout\LayoutOptions.cs" />
+    <Compile Include="Layout\SubtreeSizeCalculator.cs" />
+    <Compile Include="Rendering\GdiResourcePool.cs" />
+    <Compile Include="Rendering\NodeRenderer.cs" />
+    <Compile Include="Rendering\EnhancedNodeRenderer.cs" />
+    <Compile Include="Rendering\Parts\ShadowRenderer.cs" />
+    <Compile Include="Rendering\Parts\ConnectionRenderer.cs" />
+    <Compile Include="Rendering\Parts\NodeBodyRenderer.cs" />
+    <Compile Include="Rendering\HitTester.cs" />
+    <Compile Include="Rendering\RenderConstants.cs" />
+    <Compile Include="Services\FileService.cs" />
+    <Compile Include="Services\ClipboardService.cs" />
+    <Compile Include="View\MindMapView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\Parts\MindMapView.Render.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\Parts\MindMapView.Input.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\Parts\MindMapView.Menu.Initialize.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\Parts\MindMapView.Menu.Actions.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\Parts\MindMapView.Menu.Style.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\Parts\MindMapView.Menu.Connection.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\Parts\MindMapView.Menu.Alignment.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\Parts\MindMapView.Selection.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="UI\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

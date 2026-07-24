@@ -1,0 +1,16 @@
+H:\temp\net\winform\A312\MindMap_Optimized\MindMap\bin\Debug\MindMap.exe
+H:\temp\net\winform\A312\MindMap_Optimized\MindMap\bin\Debug\MindMap.pdb
+H:\temp\net\winform\A312\MindMap_Optimized\MindMap\obj\Debug\MindMap.csproj.AssemblyReference.cache
+H:\temp\net\winform\A312\MindMap_Optimized\MindMap\obj\Debug\MindMap.UI.MainForm.resources
+H:\temp\net\winform\A312\MindMap_Optimized\MindMap\obj\Debug\MindMap.csproj.GenerateResource.cache
+H:\temp\net\winform\A312\MindMap_Optimized\MindMap\obj\Debug\MindMap.csproj.CoreCompileInputs.cache
+H:\temp\net\winform\A312\MindMap_Optimized\MindMap\obj\Debug\MindMap.exe
+H:\temp\net\winform\A312\MindMap_Optimized\MindMap\obj\Debug\MindMap.pdb
+I:\SCADA\26SVN\Project\Winform\MindMap\MindMap_Optimized\MindMap\bin\Debug\MindMap.exe
+I:\SCADA\26SVN\Project\Winform\MindMap\MindMap_Optimized\MindMap\bin\Debug\MindMap.pdb
+I:\SCADA\26SVN\Project\Winform\MindMap\MindMap_Optimized\MindMap\obj\Debug\MindMap.csproj.AssemblyReference.cache
+I:\SCADA\26SVN\Project\Winform\MindMap\MindMap_Optimized\MindMap\obj\Debug\MindMap.UI.MainForm.resources
+I:\SCADA\26SVN\Project\Winform\MindMap\MindMap_Optimized\MindMap\obj\Debug\MindMap.csproj.GenerateResource.cache
+I:\SCADA\26SVN\Project\Winform\MindMap\MindMap_Optimized\MindMap\obj\Debug\MindMap.csproj.CoreCompileInputs.cache
+I:\SCADA\26SVN\Project\Winform\MindMap\MindMap_Optimized\MindMap\obj\Debug\MindMap.exe
+I:\SCADA\26SVN\Project\Winform\MindMap\MindMap_Optimized\MindMap\obj\Debug\MindMap.pdb
