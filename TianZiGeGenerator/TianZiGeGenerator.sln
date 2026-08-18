@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.37301.9
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TianZiGeGenerator", "TianZiGeGenerator\TianZiGeGenerator.csproj", "{5D4E6617-826D-4D99-B62D-CA8DA2B0DFAF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5D4E6617-826D-4D99-B62D-CA8DA2B0DFAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D4E6617-826D-4D99-B62D-CA8DA2B0DFAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D4E6617-826D-4D99-B62D-CA8DA2B0DFAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D4E6617-826D-4D99-B62D-CA8DA2B0DFAF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8875FF60-EADB-433D-A5FB-F792EB68C719}
+	EndGlobalSection
+EndGlobal

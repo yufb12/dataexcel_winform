@@ -1,0 +1,11 @@
+I:\SCADA\26SVN\Project\Winform\TianZiGeGenerator\TianZiGeGenerator\TianZiGeGenerator\obj\Debug\TianZiGeGenerator.csproj.AssemblyReference.cache
+I:\SCADA\26SVN\Project\Winform\TianZiGeGenerator\TianZiGeGenerator\TianZiGeGenerator\obj\Debug\TianZiGeGenerator.TianZiGeGeneratorForm2.resources
+I:\SCADA\26SVN\Project\Winform\TianZiGeGenerator\TianZiGeGenerator\TianZiGeGenerator\obj\Debug\TianZiGeGenerator.Properties.Resources.resources
+I:\SCADA\26SVN\Project\Winform\TianZiGeGenerator\TianZiGeGenerator\TianZiGeGenerator\obj\Debug\TianZiGeGenerator.TianZiGeGeneratorForm.resources
+I:\SCADA\26SVN\Project\Winform\TianZiGeGenerator\TianZiGeGenerator\TianZiGeGenerator\obj\Debug\TianZiGeGenerator.csproj.GenerateResource.cache
+I:\SCADA\26SVN\Project\Winform\TianZiGeGenerator\TianZiGeGenerator\TianZiGeGenerator\obj\Debug\TianZiGeGenerator.csproj.CoreCompileInputs.cache
+I:\SCADA\26SVN\Project\Winform\TianZiGeGenerator\TianZiGeGenerator\TianZiGeGenerator\bin\Debug\TianZiGeGenerator.exe.config
+I:\SCADA\26SVN\Project\Winform\TianZiGeGenerator\TianZiGeGenerator\TianZiGeGenerator\bin\Debug\TianZiGeGenerator.exe
+I:\SCADA\26SVN\Project\Winform\TianZiGeGenerator\TianZiGeGenerator\TianZiGeGenerator\bin\Debug\TianZiGeGenerator.pdb
+I:\SCADA\26SVN\Project\Winform\TianZiGeGenerator\TianZiGeGenerator\TianZiGeGenerator\obj\Debug\TianZiGeGenerator.exe
+I:\SCADA\26SVN\Project\Winform\TianZiGeGenerator\TianZiGeGenerator\TianZiGeGenerator\obj\Debug\TianZiGeGenerator.pdb
